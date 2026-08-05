@@ -1,0 +1,37 @@
+konfig=single_15m simbol=4 sampel=25 varian=asli
+1000BONK: bar=2500 indeks=25 entry=5
+1000PEPE: bar=2500 indeks=25 entry=4
+1000SHIB: bar=2500 indeks=25 entry=1
+AAVE: bar=2500 indeks=25 entry=7
+{
+ "perintah": "integritas",
+ "varian": {
+  "varian": "asli",
+  "diterapkan": false
+ },
+ "konfig": "single_15m",
+ "maks_bar": 2500,
+ "jumlah_strategi_registry": 26,
+ "detik": 4.7,
+ "simbol_gagal": {},
+ "uji": {
+  "determinisme": {
+   "diperiksa": 100,
+   "beda": 0,
+   "contoh": []
+  },
+  "anti_lookahead": {
+   "diperiksa": 100,
+   "beda": 0,
+   "contoh": []
+  },
+  "sanitasi_verdict": {
+   "diperiksa": 17,
+   "pelanggaran": 0,
+   "contoh": []
+  }
+ },
+ "lulus": true
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/bt95/pilot_integritas_single_15m.json
+rc=0
