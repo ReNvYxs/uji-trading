@@ -1,7 +1,7 @@
 {
  "berkas": {
   "RINGKASAN_PILOT.json": {
-   "byte": 1896,
+   "byte": 2932,
    "kunci": [
     "berkas",
     "hilang",
@@ -10,16 +10,21 @@
    "ok": true
   },
   "RINGKAS_INVENTARIS.json": {
-   "byte": 1681,
+   "byte": 4230,
    "kunci": [
-    "bar",
     "bendera",
+    "berkas_bermasalah",
     "berkas_mentah",
-    "bersih",
+    "bersih_semua_bendera",
     "byte_mentah",
-    "hari",
-    "jumlah_entri_berkas",
-    "kunci_tingkat_atas"
+    "jalur_agregat_diabaikan",
+    "jumlah_entri_per_berkas",
+    "per_tf",
+    "riwayat_pendek",
+    "sebaran_bar",
+    "sebaran_hari",
+    "simbol_dengan_volume_nol",
+    "verdict_modul"
    ],
    "ok": true
   },
