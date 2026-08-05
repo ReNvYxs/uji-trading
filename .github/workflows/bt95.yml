@@ -1,0 +1,156 @@
+name: bt95
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bt95.yml'
+      - 'alat/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: bt95
+  cancel-in-progress: false
+env:
+  MODUL_REPO: EnVyxS/lux-modul-trading
+  MODUL_REF: 8401b2327736a4cc5c588d211eb6911dde0842da
+  DATASET_REPO: EnVyxS/uji-trading
+  ASET_ID: '502033995'
+  ASET_SHA256: 79f906caaf9933d518c319821b77317e57ef15e00a30f849220024b8c6c1bff5
+  GIT_TERMINAL_PROMPT: '0'
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: siapkan bahan uji
+        run: bash alat/siapkan.sh
+      - name: rekam siapkan
+        if: always()
+        run: bash alat/rekam.sh "siapkan"
+
+      - name: dependensi modul
+        run: |
+          python -m pip install --quiet --upgrade pip
+          python -m pip install --quiet -r klon_modul/requirements.txt
+          python -c "import numpy,pandas,pyarrow,yaml,pytest;print('dep OK')" | tee hasil/bt95/log_dependensi.txt
+
+      - name: inventaris dataset 95 pair
+        continue-on-error: true
+        env:
+          LUX_MAKS_SIMBOL: '0'
+          LUX_BATAS_DETIK: '1800'
+          LUX_KELUARAN: hasil/bt95/inventaris_dataset.json
+        run: |
+          set +e
+          python3 klon_modul/scripts/ab95.py inventaris 2>&1 | tee hasil/bt95/log_inventaris.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_inventaris.txt
+      - name: rekam inventaris
+        if: always()
+        run: bash alat/rekam.sh "inventaris dataset"
+
+      - name: integritas sinyal single_15m
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_15m
+          LUX_MAKS_SIMBOL: '4'
+          LUX_MAKS_BAR: '2500'
+          LUX_SAMPEL: '25'
+          LUX_BATAS_DETIK: '900'
+          LUX_KELUARAN: hasil/bt95/pilot_integritas_single_15m.json
+        run: |
+          set +e
+          python3 klon_modul/scripts/ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_15m.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_integritas_single_15m.txt
+      - name: rekam integritas 15m
+        if: always()
+        run: bash alat/rekam.sh "integritas single_15m"
+
+      - name: integritas sinyal single_4h
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_4h
+          LUX_MAKS_SIMBOL: '4'
+          LUX_MAKS_BAR: '2500'
+          LUX_SAMPEL: '25'
+          LUX_BATAS_DETIK: '900'
+          LUX_KELUARAN: hasil/bt95/pilot_integritas_single_4h.json
+        run: |
+          set +e
+          python3 klon_modul/scripts/ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_4h.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_integritas_single_4h.txt
+      - name: rekam integritas 4h
+        if: always()
+        run: bash alat/rekam.sh "integritas single_4h"
+
+      - name: backtest pilot single_15m
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_15m
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '8'
+          LUX_MAKS_BAR: '3000'
+          LUX_BATAS_DETIK: '1500'
+          LUX_KELUARAN: hasil/bt95/pilot_bt_single_15m.json
+        run: |
+          set +e
+          python3 klon_modul/scripts/ab95.py backtest 2>&1 | tee hasil/bt95/log_bt_single_15m.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_bt_single_15m.txt
+      - name: rekam bt 15m
+        if: always()
+        run: bash alat/rekam.sh "backtest pilot single_15m"
+
+      - name: backtest pilot single_4h
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_4h
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '8'
+          LUX_MAKS_BAR: '3000'
+          LUX_BATAS_DETIK: '1500'
+          LUX_KELUARAN: hasil/bt95/pilot_bt_single_4h.json
+        run: |
+          set +e
+          python3 klon_modul/scripts/ab95.py backtest 2>&1 | tee hasil/bt95/log_bt_single_4h.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_bt_single_4h.txt
+      - name: rekam bt 4h
+        if: always()
+        run: bash alat/rekam.sh "backtest pilot single_4h"
+
+      - name: ringkas pilot
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import glob, json, os
+          wajib = ("inventaris_dataset.json",
+                   "pilot_integritas_single_15m.json",
+                   "pilot_integritas_single_4h.json",
+                   "pilot_bt_single_15m.json",
+                   "pilot_bt_single_4h.json")
+          ring = {"berkas": {}}
+          for p in sorted(glob.glob("hasil/bt95/*.json")):
+              nama = os.path.basename(p)
+              try:
+                  with open(p) as f:
+                      d = json.load(f)
+                  ring["berkas"][nama] = {
+                      "ok": True,
+                      "byte": os.path.getsize(p),
+                      "kunci": sorted(d)[:40] if isinstance(d, dict) else type(d).__name__,
+                  }
+              except Exception as e:
+                  ring["berkas"][nama] = {"ok": False, "galat": str(e)[:200]}
+          ring["hilang"] = [n for n in wajib if not os.path.exists("hasil/bt95/" + n)]
+          ring["pilot_lengkap"] = not ring["hilang"]
+          with open("hasil/bt95/RINGKASAN_PILOT.json", "w") as f:
+              json.dump(ring, f, indent=1, sort_keys=True)
+          print(json.dumps(ring, indent=1)[:3000])
+          PY
+      - name: rekam ringkasan
+        if: always()
+        run: bash alat/rekam.sh "ringkasan pilot"
