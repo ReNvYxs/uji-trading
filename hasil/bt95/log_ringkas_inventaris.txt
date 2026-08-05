@@ -5,7 +5,7 @@
   "perintah": "inventaris",
   "data_dir": "dataset/ekstrak/data_upload",
   "lulus": true,
-  "detik": 34.4,
+  "detik": 33.1,
   "jumlah_simbol": 95,
   "jumlah_berkas_csv": 475,
   "berkas_diperiksa": 475,
