@@ -1,0 +1,52 @@
+{
+ "perintah": "integritas",
+ "varian": {
+  "varian": "asli",
+  "diterapkan": false
+ },
+ "konfig": "single_4h",
+ "maks_bar": 2500,
+ "jumlah_strategi_registry": 26,
+ "detik": 2.5,
+ "simbol_gagal": {},
+ "per_simbol": {
+  "1000BONK": {
+   "bar": 1080,
+   "indeks_diuji": 25,
+   "verdict_entry": 5
+  },
+  "1000PEPE": {
+   "bar": 1080,
+   "indeks_diuji": 25,
+   "verdict_entry": 8
+  },
+  "1000SHIB": {
+   "bar": 1080,
+   "indeks_diuji": 25,
+   "verdict_entry": 7
+  },
+  "AAVE": {
+   "bar": 1080,
+   "indeks_diuji": 25,
+   "verdict_entry": 4
+  }
+ },
+ "uji": {
+  "determinisme": {
+   "diperiksa": 100,
+   "beda": 0,
+   "contoh": []
+  },
+  "anti_lookahead": {
+   "diperiksa": 100,
+   "beda": 0,
+   "contoh": []
+  },
+  "sanitasi_verdict": {
+   "diperiksa": 24,
+   "pelanggaran": 0,
+   "contoh": []
+  }
+ },
+ "lulus": true
+}
