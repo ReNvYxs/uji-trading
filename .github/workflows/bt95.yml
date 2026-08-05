@@ -44,6 +44,21 @@ jobs:
           python -m pip install --quiet -r klon_modul/requirements.txt
           python -c "import numpy,pandas,pyarrow,yaml,pytest;print('dep OK')" | tee hasil/bt95/log_dependensi.txt
 
+      - name: probe kandidat per strategi
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_15m
+          LUX_MAKS_SIMBOL: '1'
+          LUX_MAKS_BAR: '1500'
+          LUX_KELUARAN: hasil/bt95/probe_kandidat.json
+        run: |
+          set +e
+          python3 alat/probe_kandidat.py 2>&1 | tee hasil/bt95/log_probe_kandidat.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_probe_kandidat.txt
+      - name: rekam probe
+        if: always()
+        run: bash alat/rekam.sh "probe kandidat per strategi"
+
       - name: inventaris dataset 95 pair
         continue-on-error: true
         env:
@@ -64,24 +79,6 @@ jobs:
       - name: rekam inventaris
         if: always()
         run: bash alat/rekam.sh "inventaris dataset"
-
-      - name: integritas sinyal single_15m
-        continue-on-error: true
-        env:
-          LUX_KONFIG: single_15m
-          LUX_MAKS_SIMBOL: '4'
-          LUX_MAKS_BAR: '2500'
-          LUX_SAMPEL: '25'
-          LUX_BATAS_DETIK: '900'
-          LUX_KELUARAN: hasil/bt95/pilot_integritas_single_15m.json
-          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_integritas_single_15m.json
-        run: |
-          set +e
-          python3 alat/jalankan_ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_15m.txt
-          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_integritas_single_15m.txt
-      - name: rekam integritas 15m
-        if: always()
-        run: bash alat/rekam.sh "integritas single_15m"
 
       - name: integritas sinyal single_4h
         continue-on-error: true
@@ -125,6 +122,7 @@ jobs:
           python3 - <<'PY'
           import glob, json, os
           wajib = ("inventaris_dataset.json",
+                   "probe_kandidat.json",
                    "pilot_integritas_single_15m.json",
                    "pilot_integritas_single_4h.json",
                    "pilot_bt_single_15m.json",
