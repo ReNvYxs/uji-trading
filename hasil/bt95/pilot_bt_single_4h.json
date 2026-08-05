@@ -14,7 +14,7 @@
  "simbol_tersedia": 8,
  "simbol_diproses": 8,
  "simbol_gagal": {},
- "detik": 8.6,
+ "detik": 8.8,
  "total": {
   "trade": 170,
   "menang": 80,
@@ -403,7 +403,7 @@
    "max_drawdown_usd": 165.0747,
    "sampel_cukup": false,
    "bar": 127,
-   "detik": 1.1
+   "detik": 1.2
   },
   "AIGENSYN": {
    "trade": 8,
@@ -454,7 +454,7 @@
    "max_drawdown_usd": 87.3784,
    "sampel_cukup": false,
    "bar": 117,
-   "detik": 1.1
+   "detik": 1.2
   }
  }
 }
