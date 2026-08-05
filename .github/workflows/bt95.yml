@@ -20,9 +20,9 @@ env:
   GIT_TERMINAL_PROMPT: '0'
   AB95_PATH: klon_modul/scripts/ab95.py
 jobs:
-  pilot:
+  penuh:
     runs-on: ubuntu-latest
-    timeout-minutes: 110
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -43,21 +43,6 @@ jobs:
           python -m pip install --quiet --upgrade pip
           python -m pip install --quiet -r klon_modul/requirements.txt
           python -c "import numpy,pandas,pyarrow,yaml,pytest;print('dep OK')" | tee hasil/bt95/log_dependensi.txt
-
-      - name: probe kandidat per strategi
-        continue-on-error: true
-        env:
-          LUX_KONFIG: single_15m
-          LUX_MAKS_SIMBOL: '1'
-          LUX_MAKS_BAR: '1500'
-          LUX_KELUARAN: hasil/bt95/probe_kandidat.json
-        run: |
-          set +e
-          python3 alat/probe_kandidat.py 2>&1 | tee hasil/bt95/log_probe_kandidat.txt
-          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_probe_kandidat.txt
-      - name: rekam probe
-        if: always()
-        run: bash alat/rekam.sh "probe kandidat per strategi"
 
       - name: inventaris dataset 95 pair
         continue-on-error: true
@@ -80,13 +65,27 @@ jobs:
         if: always()
         run: bash alat/rekam.sh "inventaris dataset"
 
+      - name: integritas sinyal single_15m
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_15m
+          LUX_MAKS_SIMBOL: '6'
+          LUX_MAKS_BAR: '2500'
+          LUX_SAMPEL: '30'
+          LUX_BATAS_DETIK: '900'
+          LUX_KELUARAN: hasil/bt95/pilot_integritas_single_15m.json
+          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_integritas_single_15m.json
+        run: |
+          set +e
+          python3 alat/jalankan_ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_15m.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_integritas_single_15m.txt
       - name: integritas sinyal single_4h
         continue-on-error: true
         env:
           LUX_KONFIG: single_4h
-          LUX_MAKS_SIMBOL: '4'
-          LUX_MAKS_BAR: '2500'
-          LUX_SAMPEL: '25'
+          LUX_MAKS_SIMBOL: '6'
+          LUX_MAKS_BAR: '1200'
+          LUX_SAMPEL: '30'
           LUX_BATAS_DETIK: '900'
           LUX_KELUARAN: hasil/bt95/pilot_integritas_single_4h.json
           AB95_JEJAK_KONVERSI: hasil/bt95/konversi_integritas_single_4h.json
@@ -94,58 +93,70 @@ jobs:
           set +e
           python3 alat/jalankan_ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_4h.txt
           echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_integritas_single_4h.txt
-      - name: rekam integritas 4h
+      - name: rekam integritas
         if: always()
-        run: bash alat/rekam.sh "integritas single_4h"
+        run: bash alat/rekam.sh "integritas sinyal 15m + 4h"
 
-      - name: backtest pilot single_4h
+      - name: analisa 95 pair single_4h varian asli
         continue-on-error: true
         env:
           LUX_KONFIG: single_4h
           LUX_VARIAN: asli
-          LUX_MAKS_SIMBOL: '8'
-          LUX_MAKS_BAR: '3000'
-          LUX_BATAS_DETIK: '1500'
-          LUX_KELUARAN: hasil/bt95/pilot_bt_single_4h.json
-          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_bt_single_4h.json
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '1200'
+          LUX_BATAS_DETIK: '2400'
+          LUX_PIPELINE_PASS: '1'
+          LUX_PIPELINE_MAKS: '95'
+          LUX_KELUARAN: hasil/bt95/analisa_single_4h_asli.json
         run: |
           set +e
-          python3 alat/jalankan_ab95.py backtest 2>&1 | tee hasil/bt95/log_bt_single_4h.txt
-          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_bt_single_4h.txt
-      - name: rekam bt 4h
+          python3 alat/analisa95.py 2>&1 | tee hasil/bt95/log_analisa_single_4h_asli.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_analisa_single_4h_asli.txt
+      - name: rekam analisa 4h asli
         if: always()
-        run: bash alat/rekam.sh "backtest pilot single_4h"
+        run: bash alat/rekam.sh "analisa 95 pair single_4h asli"
 
-      - name: ringkas pilot
-        if: always()
+      - name: analisa 95 pair single_4h varian final_bar_per_hari
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_4h
+          LUX_VARIAN: final_bar_per_hari
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '1200'
+          LUX_BATAS_DETIK: '2400'
+          LUX_PIPELINE_PASS: '1'
+          LUX_PIPELINE_MAKS: '95'
+          LUX_KELUARAN: hasil/bt95/analisa_single_4h_final_bar_per_hari.json
         run: |
-          python3 - <<'PY'
-          import glob, json, os
-          wajib = ("inventaris_dataset.json",
-                   "probe_kandidat.json",
-                   "pilot_integritas_single_15m.json",
-                   "pilot_integritas_single_4h.json",
-                   "pilot_bt_single_15m.json",
-                   "pilot_bt_single_4h.json")
-          ring = {"berkas": {}}
-          for p in sorted(glob.glob("hasil/bt95/*.json")):
-              nama = os.path.basename(p)
-              try:
-                  with open(p, encoding="utf-8") as f:
-                      d = json.load(f)
-                  ring["berkas"][nama] = {
-                      "ok": True,
-                      "byte": os.path.getsize(p),
-                      "kunci": sorted(d)[:40] if isinstance(d, dict) else type(d).__name__,
-                  }
-              except Exception as e:
-                  ring["berkas"][nama] = {"ok": False, "galat": str(e)[:200]}
-          ring["hilang"] = [n for n in wajib if not os.path.exists("hasil/bt95/" + n)]
-          ring["pilot_lengkap"] = not ring["hilang"]
-          with open("hasil/bt95/RINGKASAN_PILOT.json", "w", encoding="utf-8") as f:
-              json.dump(ring, f, indent=1, sort_keys=True, ensure_ascii=False)
-          print(json.dumps(ring, indent=1, ensure_ascii=False)[:3000])
-          PY
+          set +e
+          python3 alat/analisa95.py 2>&1 | tee hasil/bt95/log_analisa_single_4h_final.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_analisa_single_4h_final.txt
+      - name: rekam analisa 4h varian
+        if: always()
+        run: bash alat/rekam.sh "analisa 95 pair single_4h varian final"
+
+      - name: analisa 95 pair single_15m varian asli
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_15m
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '6000'
+          LUX_BATAS_DETIK: '6000'
+          LUX_PIPELINE_PASS: '0'
+          LUX_KELUARAN: hasil/bt95/analisa_single_15m_asli.json
+        run: |
+          set +e
+          python3 alat/analisa95.py 2>&1 | tee hasil/bt95/log_analisa_single_15m_asli.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_analisa_single_15m_asli.txt
+      - name: rekam analisa 15m asli
+        if: always()
+        run: bash alat/rekam.sh "analisa 95 pair single_15m asli"
+
+      - name: indeks artefak
+        if: always()
+        continue-on-error: true
+        run: python3 alat/ringkas_pilot.py 2>&1 | tee hasil/bt95/log_ringkasan.txt
       - name: rekam ringkasan
         if: always()
-        run: bash alat/rekam.sh "ringkasan pilot"
+        run: bash alat/rekam.sh "indeks artefak"
