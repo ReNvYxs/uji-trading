@@ -1,0 +1,264 @@
+{
+ "berkas": {
+  "multi_15m_ctx1h.json": {
+   "byte": 102971,
+   "detik": 3274.0,
+   "entry_tf": "15m",
+   "galat_isi": {},
+   "layak": [
+    "donchian_breakout",
+    "squeeze_breakout",
+    "vwap_reclaim"
+   ],
+   "ok": true,
+   "rugi_dua_paruh": [
+    "breaker_block",
+    "level_bulat",
+    "order_block_retest"
+   ],
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 7163.4708,
+    "biaya_per_trade": 0.9713,
+    "edge_kotor_per_trade": 0.5406,
+    "expectancy_r": -0.0193,
+    "pf_bersih": 0.9684,
+    "pf_kotor": 1.0417,
+    "pnl_bersih": -3176.4638,
+    "pnl_kotor": 3987.007,
+    "trade": 7375,
+    "win_rate": 0.3854
+   }
+  },
+  "multi_1h_ctx4h.json": {
+   "byte": 99338,
+   "detik": 1206.6,
+   "entry_tf": "1h",
+   "galat_isi": {},
+   "layak": [
+    "donchian_breakout",
+    "smc_ob_fvg"
+   ],
+   "ok": true,
+   "rugi_dua_paruh": [
+    "breaker_block",
+    "level_bulat",
+    "market_structure_shift",
+    "order_block_retest",
+    "pivot_reversal",
+    "vp_tepi_value_area"
+   ],
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 3062.8972,
+    "biaya_per_trade": 0.5846,
+    "edge_kotor_per_trade": -0.0227,
+    "expectancy_r": -0.0267,
+    "pf_bersih": 0.9546,
+    "pf_kotor": 0.9983,
+    "pnl_bersih": -3181.6397,
+    "pnl_kotor": -118.7425,
+    "trade": 5239,
+    "win_rate": 0.3833
+   }
+  },
+  "multi_4h_ctx1d.json": {
+   "byte": 92049,
+   "detik": 82.9,
+   "entry_tf": "4h",
+   "galat_isi": {},
+   "layak": [],
+   "ok": true,
+   "rugi_dua_paruh": [],
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 489.3375,
+    "biaya_per_trade": 0.3359,
+    "edge_kotor_per_trade": -0.2526,
+    "expectancy_r": -0.0286,
+    "pf_bersih": 0.9547,
+    "pf_kotor": 0.9802,
+    "pnl_bersih": -857.3831,
+    "pnl_kotor": -368.0456,
+    "trade": 1457,
+    "win_rate": 0.4015
+   }
+  },
+  "single_15m.json": {
+   "byte": 87692,
+   "detik": 3585.6,
+   "entry_tf": "15m",
+   "galat_isi": {},
+   "layak": [],
+   "ok": true,
+   "rugi_dua_paruh": [
+    "breakout_volume",
+    "head_shoulders",
+    "ict_liquidity_sweep",
+    "level_bulat",
+    "pivot_reversal",
+    "vp_tepi_value_area"
+   ],
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 11576.7227,
+    "biaya_per_trade": 1.0344,
+    "edge_kotor_per_trade": 0.282,
+    "expectancy_r": -0.0347,
+    "pf_bersih": 0.9394,
+    "pf_kotor": 1.0241,
+    "pnl_bersih": -8420.2389,
+    "pnl_kotor": 3156.4838,
+    "trade": 11192,
+    "win_rate": 0.4207
+   }
+  },
+  "single_1h.json": {
+   "byte": 86262,
+   "detik": 1506.7,
+   "entry_tf": "1h",
+   "galat_isi": {},
+   "layak": [
+    "cup_and_handle",
+    "vwap_reclaim"
+   ],
+   "ok": true,
+   "rugi_dua_paruh": [
+    "pivot_reversal",
+    "triangle_breakout",
+    "vp_tepi_value_area"
+   ],
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 6269.8196,
+    "biaya_per_trade": 0.6999,
+    "edge_kotor_per_trade": 0.4345,
+    "expectancy_r": -0.0118,
+    "pf_bersih": 0.979,
+    "pf_kotor": 1.0358,
+    "pnl_bersih": -2377.3864,
+    "pnl_kotor": 3892.4332,
+    "trade": 8958,
+    "win_rate": 0.4248
+   }
+  },
+  "single_4h.json": {
+   "byte": 82370,
+   "detik": 95.3,
+   "entry_tf": "4h",
+   "galat_isi": {},
+   "layak": [
+    "pivot_reversal"
+   ],
+   "ok": true,
+   "rugi_dua_paruh": [
+    "level_bulat"
+   ],
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 813.0462,
+    "biaya_per_trade": 0.3886,
+    "edge_kotor_per_trade": 0.6463,
+    "expectancy_r": 0.0117,
+    "pf_bersih": 1.0206,
+    "pf_kotor": 1.0529,
+    "pnl_bersih": 539.0089,
+    "pnl_kotor": 1352.0551,
+    "trade": 2092,
+    "win_rate": 0.4326
+   }
+  }
+ },
+ "peta_tf": {
+  "multi_15m_ctx1h": {
+   "biaya_per_trade": 0.9713,
+   "breadth_pair_profit": 0.5053,
+   "context_tfs": [
+    "1h"
+   ],
+   "edge_kotor_per_trade": 0.5406,
+   "entry_tf": "15m",
+   "expectancy_r": -0.0193,
+   "pf_bersih": 0.9684,
+   "pf_kotor": 1.0417,
+   "rasio_biaya_atas_edge": 1.7967,
+   "terpotong": false,
+   "trade": 7375
+  },
+  "multi_1h_ctx4h": {
+   "biaya_per_trade": 0.5846,
+   "breadth_pair_profit": 0.4239,
+   "context_tfs": [
+    "4h"
+   ],
+   "edge_kotor_per_trade": -0.0227,
+   "entry_tf": "1h",
+   "expectancy_r": -0.0267,
+   "pf_bersih": 0.9546,
+   "pf_kotor": 0.9983,
+   "rasio_biaya_atas_edge": -25.7533,
+   "terpotong": false,
+   "trade": 5239
+  },
+  "multi_4h_ctx1d": {
+   "biaya_per_trade": 0.3359,
+   "breadth_pair_profit": 0.5765,
+   "context_tfs": [
+    "1d"
+   ],
+   "edge_kotor_per_trade": -0.2526,
+   "entry_tf": "4h",
+   "expectancy_r": -0.0286,
+   "pf_bersih": 0.9547,
+   "pf_kotor": 0.9802,
+   "rasio_biaya_atas_edge": -1.3298,
+   "terpotong": false,
+   "trade": 1457
+  },
+  "single_15m": {
+   "biaya_per_trade": 1.0344,
+   "breadth_pair_profit": 0.3895,
+   "context_tfs": [],
+   "edge_kotor_per_trade": 0.282,
+   "entry_tf": "15m",
+   "expectancy_r": -0.0347,
+   "pf_bersih": 0.9394,
+   "pf_kotor": 1.0241,
+   "rasio_biaya_atas_edge": 3.6681,
+   "terpotong": false,
+   "trade": 11192
+  },
+  "single_1h": {
+   "biaya_per_trade": 0.6999,
+   "breadth_pair_profit": 0.4565,
+   "context_tfs": [],
+   "edge_kotor_per_trade": 0.4345,
+   "entry_tf": "1h",
+   "expectancy_r": -0.0118,
+   "pf_bersih": 0.979,
+   "pf_kotor": 1.0358,
+   "rasio_biaya_atas_edge": 1.6108,
+   "terpotong": false,
+   "trade": 8958
+  },
+  "single_4h": {
+   "biaya_per_trade": 0.3886,
+   "breadth_pair_profit": 0.5647,
+   "context_tfs": [],
+   "edge_kotor_per_trade": 0.6463,
+   "entry_tf": "4h",
+   "expectancy_r": 0.0117,
+   "pf_bersih": 1.0206,
+   "pf_kotor": 1.0529,
+   "rasio_biaya_atas_edge": 0.6013,
+   "terpotong": false,
+   "trade": 2092
+  }
+ }
+}

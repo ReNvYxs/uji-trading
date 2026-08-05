@@ -1,0 +1,87 @@
+{
+ "multi_15m_ctx1h": {
+  "entry_tf": "15m",
+  "context_tfs": [
+   "1h"
+  ],
+  "trade": 7375,
+  "pf_bersih": 0.9684,
+  "pf_kotor": 1.0417,
+  "expectancy_r": -0.0193,
+  "biaya_per_trade": 0.9713,
+  "edge_kotor_per_trade": 0.5406,
+  "rasio_biaya_atas_edge": 1.7967,
+  "breadth_pair_profit": 0.5053,
+  "terpotong": false
+ },
+ "multi_1h_ctx4h": {
+  "entry_tf": "1h",
+  "context_tfs": [
+   "4h"
+  ],
+  "trade": 5239,
+  "pf_bersih": 0.9546,
+  "pf_kotor": 0.9983,
+  "expectancy_r": -0.0267,
+  "biaya_per_trade": 0.5846,
+  "edge_kotor_per_trade": -0.0227,
+  "rasio_biaya_atas_edge": -25.7533,
+  "breadth_pair_profit": 0.4239,
+  "terpotong": false
+ },
+ "multi_4h_ctx1d": {
+  "entry_tf": "4h",
+  "context_tfs": [
+   "1d"
+  ],
+  "trade": 1457,
+  "pf_bersih": 0.9547,
+  "pf_kotor": 0.9802,
+  "expectancy_r": -0.0286,
+  "biaya_per_trade": 0.3359,
+  "edge_kotor_per_trade": -0.2526,
+  "rasio_biaya_atas_edge": -1.3298,
+  "breadth_pair_profit": 0.5765,
+  "terpotong": false
+ },
+ "single_15m": {
+  "entry_tf": "15m",
+  "context_tfs": [],
+  "trade": 11192,
+  "pf_bersih": 0.9394,
+  "pf_kotor": 1.0241,
+  "expectancy_r": -0.0347,
+  "biaya_per_trade": 1.0344,
+  "edge_kotor_per_trade": 0.282,
+  "rasio_biaya_atas_edge": 3.6681,
+  "breadth_pair_profit": 0.3895,
+  "terpotong": false
+ },
+ "single_1h": {
+  "entry_tf": "1h",
+  "context_tfs": [],
+  "trade": 8958,
+  "pf_bersih": 0.979,
+  "pf_kotor": 1.0358,
+  "expectancy_r": -0.0118,
+  "biaya_per_trade": 0.6999,
+  "edge_kotor_per_trade": 0.4345,
+  "rasio_biaya_atas_edge": 1.6108,
+  "breadth_pair_profit": 0.4565,
+  "terpotong": false
+ },
+ "single_4h": {
+  "entry_tf": "4h",
+  "context_tfs": [],
+  "trade": 2092,
+  "pf_bersih": 1.0206,
+  "pf_kotor": 1.0529,
+  "expectancy_r": 0.0117,
+  "biaya_per_trade": 0.3886,
+  "edge_kotor_per_trade": 0.6463,
+  "rasio_biaya_atas_edge": 0.6013,
+  "breadth_pair_profit": 0.5647,
+  "terpotong": false
+ }
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/peta/INDEKS.json
