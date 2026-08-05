@@ -1,0 +1,179 @@
+{
+ "detik": 659.4,
+ "galat": 0,
+ "cara_bayangan": "dataclasses.replace",
+ "parameter_bayangan_beda": [],
+ "a_modul": {
+  "trade": 2272,
+  "pf": 0.9545,
+  "expR": -0.0255,
+  "pnl": -1337.4139
+ },
+ "b_kalender": {
+  "trade": 2179,
+  "pf": 0.89,
+  "expR": -0.068,
+  "pnl": -3162.1906
+ },
+ "berpasangan": {
+  "simbol_dibandingkan": 95,
+  "simbol_kalender_lebih_baik": 42,
+  "simbol_modul_lebih_baik": 47,
+  "simbol_seri": 6,
+  "delta_pnl_per_simbol": {
+   "n": 95,
+   "min": -432.1889,
+   "p50": 0.0,
+   "p90": 167.20122,
+   "maks": 485.9868,
+   "rata": -19.208165
+  },
+  "delta_pnl_total": -1824.7757,
+  "terburuk_5": [
+   [
+    "DOGE",
+    -432.1889
+   ],
+   [
+    "XAU",
+    -369.8276
+   ],
+   [
+    "WLD",
+    -340.6304
+   ],
+   [
+    "FIL",
+    -307.0069
+   ],
+   [
+    "BTC",
+    -305.6142
+   ]
+  ],
+  "terbaik_5": [
+   [
+    "ZEC",
+    485.9868
+   ],
+   [
+    "XPL",
+    480.346
+   ],
+   [
+    "AVAX",
+    285.7586
+   ],
+   [
+    "OGN",
+    264.1885
+   ],
+   [
+    "WLFI",
+    207.7915
+   ]
+  ]
+ },
+ "sensus_4h": {
+  "macd_rsi_trendbreak": {
+   "verdict": 162,
+   "lolos_ambang": 2,
+   "simbol_dengan_verdict": 68,
+   "tolak": {
+    "tak_ada_setup": 62410
+   },
+   "skor_ringkas": {
+    "n": 162,
+    "min": 11.51899,
+    "p50": 32.649502,
+    "p90": 51.611502,
+    "maks": 78.456247,
+    "rata": 33.661548
+   }
+  },
+  "level_bulat": {
+   "verdict": 5777,
+   "lolos_ambang": 1336,
+   "simbol_dengan_verdict": 64,
+   "tolak": {
+    "tak_ada_setup": 56795
+   },
+   "skor_ringkas": {
+    "n": 5777,
+    "min": 0.181454,
+    "p50": 42.678798,
+    "p90": 70.719639,
+    "maks": 99.900221,
+    "rata": 44.364481
+   }
+  },
+  "pivot_reversal": {
+   "verdict": 22157,
+   "lolos_ambang": 4509,
+   "simbol_dengan_verdict": 85,
+   "tolak": {
+    "tak_ada_setup": 40415
+   },
+   "skor_ringkas": {
+    "n": 22157,
+    "min": 11.564856,
+    "p50": 41.39499,
+    "p90": 70.37792,
+    "maks": 100.0,
+    "rata": 44.38382
+   }
+  }
+ },
+ "sensus_1h": {
+  "macd_rsi_trendbreak": {
+   "verdict": 122,
+   "lolos_ambang": 0,
+   "simbol_dengan_verdict": 28,
+   "tolak": {
+    "tak_ada_setup": 45832
+   },
+   "skor_ringkas": {
+    "n": 122,
+    "min": 11.490028,
+    "p50": 32.150914,
+    "p90": 49.651446,
+    "maks": 65.396945,
+    "rata": 32.946702
+   }
+  },
+  "level_bulat": {
+   "verdict": 7746,
+   "lolos_ambang": 1755,
+   "simbol_dengan_verdict": 27,
+   "tolak": {
+    "tak_ada_setup": 38208
+   },
+   "skor_ringkas": {
+    "n": 7746,
+    "min": 0.023273,
+    "p50": 41.995372,
+    "p90": 70.992777,
+    "maks": 99.383591,
+    "rata": 43.984841
+   }
+  },
+  "pivot_reversal": {
+   "verdict": 7779,
+   "lolos_ambang": 1332,
+   "simbol_dengan_verdict": 28,
+   "tolak": {
+    "tak_ada_setup": 38175
+   },
+   "skor_ringkas": {
+    "n": 7779,
+    "min": 0.0,
+    "p50": 39.209949,
+    "p90": 68.2312,
+    "maks": 99.961921,
+    "rata": 41.019609
+   }
+  }
+ }
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/teori4/TEORI4.json
+rc=0

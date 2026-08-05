@@ -1,0 +1,409 @@
+{
+ "cara_bayangan": "dataclasses.replace",
+ "catatan": [],
+ "detik": 659.4,
+ "galat": [],
+ "parameter_bayangan": {
+  "ambang": "sama",
+  "deskripsi": "sama",
+  "detektor": "sengaja berbeda",
+  "horizon": "sama",
+  "kelompok": "sama",
+  "konteks": "sama",
+  "nama": "sama",
+  "porsi": "sama",
+  "rr": "sama",
+  "sl_atr": "sama",
+  "sumber": "sama",
+  "warmup": "sama"
+ },
+ "perintah": "teori4",
+ "s1_ab_pivot": {
+  "arm_a_modul_bergulir": {
+   "bar_dievaluasi": 39736,
+   "detik": 12.9,
+   "entry_ditolak_biaya": 6,
+   "paruh_1": {
+    "biaya": 512.544,
+    "biaya_per_trade": 0.4257,
+    "expectancy_r": -0.0555,
+    "menang": 504,
+    "pf_bersih": 0.9061,
+    "pf_kotor": 0.937,
+    "pnl_bersih": -1493.2542,
+    "pnl_bersih_per_trade": -1.2402,
+    "pnl_kotor": -980.7102,
+    "r_kalah": -1.0224,
+    "r_menang": 1.2875,
+    "sampel_cukup": true,
+    "trade": 1204,
+    "win_rate": 0.4186
+   },
+   "paruh_2": {
+    "biaya": 452.9296,
+    "biaya_per_trade": 0.4241,
+    "expectancy_r": 0.0083,
+    "menang": 471,
+    "pf_bersih": 1.0116,
+    "pf_kotor": 1.0462,
+    "pnl_bersih": 155.8403,
+    "pnl_bersih_per_trade": 0.1459,
+    "pnl_kotor": 608.7699,
+    "r_kalah": -1.018,
+    "r_menang": 1.3093,
+    "sampel_cukup": true,
+    "trade": 1068,
+    "win_rate": 0.441
+   },
+   "simbol_diproses": 95,
+   "simbol_gagal": {},
+   "total": {
+    "biaya": 965.4735,
+    "biaya_per_trade": 0.4249,
+    "expectancy_r": -0.0255,
+    "menang": 975,
+    "pf_bersih": 0.9545,
+    "pf_kotor": 0.9871,
+    "pnl_bersih": -1337.4139,
+    "pnl_bersih_per_trade": -0.5887,
+    "pnl_kotor": -371.9404,
+    "r_kalah": -1.0204,
+    "r_menang": 1.298,
+    "sampel_cukup": true,
+    "trade": 2272,
+    "win_rate": 0.4291
+   }
+  },
+  "arm_b_kalender": {
+   "bar_dievaluasi": 26748,
+   "detik": 9.8,
+   "entry_ditolak_biaya": 11,
+   "paruh_1": {
+    "biaya": 402.0648,
+    "biaya_per_trade": 0.395,
+    "expectancy_r": -0.094,
+    "menang": 415,
+    "pf_bersih": 0.8484,
+    "pf_kotor": 0.8754,
+    "pnl_bersih": -2053.5733,
+    "pnl_bersih_per_trade": -2.0173,
+    "pnl_kotor": -1651.5085,
+    "r_kalah": -1.0207,
+    "r_menang": 1.2526,
+    "sampel_cukup": true,
+    "trade": 1018,
+    "win_rate": 0.4077
+   },
+   "paruh_2": {
+    "biaya": 457.704,
+    "biaya_per_trade": 0.3942,
+    "expectancy_r": -0.0452,
+    "menang": 478,
+    "pf_bersih": 0.9271,
+    "pf_kotor": 0.9563,
+    "pnl_bersih": -1108.6173,
+    "pnl_bersih_per_trade": -0.9549,
+    "pnl_kotor": -650.9134,
+    "r_kalah": -1.0168,
+    "r_menang": 1.3431,
+    "sampel_cukup": true,
+    "trade": 1161,
+    "win_rate": 0.4117
+   },
+   "simbol_diproses": 95,
+   "simbol_gagal": {},
+   "total": {
+    "biaya": 859.7688,
+    "biaya_per_trade": 0.3946,
+    "expectancy_r": -0.068,
+    "menang": 893,
+    "pf_bersih": 0.89,
+    "pf_kotor": 0.9182,
+    "pnl_bersih": -3162.1906,
+    "pnl_bersih_per_trade": -1.4512,
+    "pnl_kotor": -2302.4219,
+    "r_kalah": -1.0186,
+    "r_menang": 1.3011,
+    "sampel_cukup": true,
+    "trade": 2179,
+    "win_rate": 0.4098
+   }
+  },
+  "batas_paruh_ts": 1776715200000,
+  "entry_tf": "4h",
+  "hitung_kalender": {},
+  "konfig": "single_4h, registry berisi satu strategi saja",
+  "maks_bar": 1200,
+  "perbandingan_berpasangan": {
+   "delta_pnl_per_simbol": {
+    "maks": 485.9868,
+    "min": -432.1889,
+    "n": 95,
+    "p50": 0.0,
+    "p90": 167.20122,
+    "rata": -19.208165
+   },
+   "delta_pnl_total": -1824.7757,
+   "simbol_dibandingkan": 95,
+   "simbol_kalender_lebih_baik": 42,
+   "simbol_modul_lebih_baik": 47,
+   "simbol_seri": 6,
+   "terbaik_5": [
+    [
+     "ZEC",
+     485.9868
+    ],
+    [
+     "XPL",
+     480.346
+    ],
+    [
+     "AVAX",
+     285.7586
+    ],
+    [
+     "OGN",
+     264.1885
+    ],
+    [
+     "WLFI",
+     207.7915
+    ]
+   ],
+   "terburuk_5": [
+    [
+     "DOGE",
+     -432.1889
+    ],
+    [
+     "XAU",
+     -369.8276
+    ],
+    [
+     "WLD",
+     -340.6304
+    ],
+    [
+     "FIL",
+     -307.0069
+    ],
+    [
+     "BTC",
+     -305.6142
+    ]
+   ]
+  },
+  "peringatan": "registry terisolasi: angka absolut tidak sebanding dengan peta 95 pair registry penuh, karena okupansi posisi berbeda. Yang sah adalah A vs B.",
+  "simbol_tersedia": 95
+ },
+ "s2_sensus_1h": {
+  "bar_dievaluasi": 45954,
+  "context_tfs": [
+   "4h"
+  ],
+  "detik": 357.4,
+  "entry_tf": "1h",
+  "introspeksi": {
+   "penolakan_atribut": [
+    "kode",
+    "pesan",
+    "strategy_id"
+   ],
+   "verdict_atribut": [
+    "ambang",
+    "arah",
+    "calibrated_p",
+    "entry",
+    "evidence",
+    "features_used",
+    "invalidation",
+    "kelompok",
+    "level",
+    "lolos_ambang",
+    "ringkas",
+    "risiko_harga",
+    "rr_tp1",
+    "rr_utama",
+    "skor",
+    "sl",
+    "strategy_id",
+    "tfs_used",
+    "tps",
+    "ts_sinyal"
+   ]
+  },
+  "konfig": "multi_1h_ctx4h",
+  "konteks_gagal": 0,
+  "maks_bar": 2000,
+  "per_strategi": {
+   "level_bulat": {
+    "lolos_ambang": 1755,
+    "simbol_dengan_verdict": 27,
+    "skor_ringkas": {
+     "maks": 99.383591,
+     "min": 0.023273,
+     "n": 7746,
+     "p50": 41.995372,
+     "p90": 70.992777,
+     "rata": 43.984841
+    },
+    "tolak": {
+     "tak_ada_setup": 38208
+    },
+    "verdict": 7746
+   },
+   "macd_rsi_trendbreak": {
+    "lolos_ambang": 0,
+    "simbol_dengan_verdict": 28,
+    "skor_ringkas": {
+     "maks": 65.396945,
+     "min": 11.490028,
+     "n": 122,
+     "p50": 32.150914,
+     "p90": 49.651446,
+     "rata": 32.946702
+    },
+    "tolak": {
+     "tak_ada_setup": 45832
+    },
+    "verdict": 122
+   },
+   "pivot_reversal": {
+    "lolos_ambang": 1332,
+    "simbol_dengan_verdict": 28,
+    "skor_ringkas": {
+     "maks": 99.961921,
+     "min": 0.0,
+     "n": 7779,
+     "p50": 39.209949,
+     "p90": 68.2312,
+     "rata": 41.019609
+    },
+    "tolak": {
+     "tak_ada_setup": 38175
+    },
+    "verdict": 7779
+   }
+  },
+  "simbol_diproses": 30,
+  "simbol_gagal": {}
+ },
+ "s2_sensus_4h": {
+  "bar_dievaluasi": 62572,
+  "context_tfs": [
+   "1d"
+  ],
+  "detik": 279.2,
+  "entry_tf": "4h",
+  "introspeksi": {
+   "penolakan_atribut": [
+    "kode",
+    "pesan",
+    "strategy_id"
+   ],
+   "verdict_atribut": [
+    "ambang",
+    "arah",
+    "calibrated_p",
+    "entry",
+    "evidence",
+    "features_used",
+    "invalidation",
+    "kelompok",
+    "level",
+    "lolos_ambang",
+    "ringkas",
+    "risiko_harga",
+    "rr_tp1",
+    "rr_utama",
+    "skor",
+    "sl",
+    "strategy_id",
+    "tfs_used",
+    "tps",
+    "ts_sinyal"
+   ]
+  },
+  "konfig": "multi_4h_ctx1d",
+  "konteks_gagal": 0,
+  "maks_bar": 1200,
+  "per_strategi": {
+   "level_bulat": {
+    "lolos_ambang": 1336,
+    "simbol_dengan_verdict": 64,
+    "skor_ringkas": {
+     "maks": 99.900221,
+     "min": 0.181454,
+     "n": 5777,
+     "p50": 42.678798,
+     "p90": 70.719639,
+     "rata": 44.364481
+    },
+    "tolak": {
+     "tak_ada_setup": 56795
+    },
+    "verdict": 5777
+   },
+   "macd_rsi_trendbreak": {
+    "lolos_ambang": 2,
+    "simbol_dengan_verdict": 68,
+    "skor_ringkas": {
+     "maks": 78.456247,
+     "min": 11.51899,
+     "n": 162,
+     "p50": 32.649502,
+     "p90": 51.611502,
+     "rata": 33.661548
+    },
+    "tolak": {
+     "tak_ada_setup": 62410
+    },
+    "verdict": 162
+   },
+   "pivot_reversal": {
+    "lolos_ambang": 4509,
+    "simbol_dengan_verdict": 85,
+    "skor_ringkas": {
+     "maks": 100.0,
+     "min": 11.564856,
+     "n": 22157,
+     "p50": 41.39499,
+     "p90": 70.37792,
+     "rata": 44.38382
+    },
+    "tolak": {
+     "tak_ada_setup": 40415
+    },
+    "verdict": 22157
+   }
+  },
+  "simbol_diproses": 95,
+  "simbol_gagal": {}
+ },
+ "tanda_tangan": {
+  "Backtester.__init__": "(self, plane: 'DataPlane', tfplan: 'TFPlan', horizon: 'str' = 'intraday', registry: 'Optional[Registry]' = None, balance_awal: 'float' = 1000.0, leverage_maks: 'float' = 20.0, margin_konflik: 'float' = 5.0, fee_bps: 'float' = 2.0, slippage_bps: 'float' = 0.0, saring_biaya: 'bool' = True, fee_sl_bps: 'Optional[float]' = None, slippage_sl_bps: 'Optional[float]' = None, spek: 'Optional[SpesifikasiKontrak]' = None, porsi_margin_maks: 'float' = 0.5)",
+  "Registry.__init__": "(self, strategi: 'Sequence[Strategi]' = ())",
+  "SpesifikasiPola_medan": [
+   "nama",
+   "kelompok",
+   "detektor",
+   "ambang",
+   "warmup",
+   "konteks",
+   "horizon",
+   "sl_atr",
+   "rr",
+   "porsi",
+   "deskripsi",
+   "sumber"
+  ],
+  "StrategiPola.__init__": "(self, spek: 'SpesifikasiPola') -> 'None'",
+  "ab.buat_backtester": "(plane, tfplan, saring)",
+  "ab.daftar_simbol": "(tfs)",
+  "ab.muat_plane": "(simbol, tfs, maks_bar)"
+ },
+ "varian": {
+  "diterapkan": false,
+  "varian": "asli"
+ }
+}
