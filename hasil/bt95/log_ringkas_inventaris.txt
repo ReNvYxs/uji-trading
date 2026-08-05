@@ -1,23 +1,69 @@
 {
  "berkas_mentah": "hasil/bt95/inventaris_dataset.json",
  "byte_mentah": 125579,
- "kunci_tingkat_atas": [
-  "berkas_bermasalah",
-  "berkas_diperiksa",
-  "data_dir",
-  "detik",
-  "jumlah_berkas_bermasalah",
-  "jumlah_berkas_csv",
-  "jumlah_simbol",
-  "lulus",
-  "per_tf",
-  "perintah",
-  "rinci",
-  "simbol",
-  "terpotong_batas_waktu",
-  "tf_tersedia"
+ "verdict_modul": {
+  "perintah": "inventaris",
+  "data_dir": "dataset/ekstrak/data_upload",
+  "lulus": true,
+  "detik": 34.2,
+  "jumlah_simbol": 95,
+  "jumlah_berkas_csv": 475,
+  "berkas_diperiksa": 475,
+  "jumlah_berkas_bermasalah": 0,
+  "terpotong_batas_waktu": false,
+  "tf_tersedia": [
+   "15m",
+   "1d",
+   "1h",
+   "4h",
+   "5m"
+  ]
+ },
+ "per_tf": {
+  "15m": {
+   "berkas": 95,
+   "bar": 1429094,
+   "bar_min": 315,
+   "bar_maks": 17280,
+   "celah": 0
+  },
+  "1d": {
+   "berkas": 95,
+   "bar": 14903,
+   "bar_min": 4,
+   "bar_maks": 180,
+   "celah": 0
+  },
+  "1h": {
+   "berkas": 95,
+   "bar": 357293,
+   "bar_min": 79,
+   "bar_maks": 4321,
+   "celah": 0
+  },
+  "4h": {
+   "berkas": 95,
+   "bar": 89336,
+   "bar_min": 20,
+   "bar_maks": 1080,
+   "celah": 0
+  },
+  "5m": {
+   "berkas": 95,
+   "bar": 4287258,
+   "bar_min": 943,
+   "bar_maks": 51841,
+   "celah": 0
+  }
+ },
+ "jumlah_entri_per_berkas": 475,
+ "jalur_agregat_diabaikan": [
+  "per_tf/15m",
+  "per_tf/1d",
+  "per_tf/1h",
+  "per_tf/4h",
+  "per_tf/5m"
  ],
- "jumlah_entri_berkas": 480,
  "bendera": {
   "duplikat_ts": {
    "jumlah_berkas_kena": 0,
@@ -54,62 +100,238 @@
    "total": 262,
    "terburuk": [
     [
-     "rinci/CRCL_5m.csv",
+     "CRCL_5m.csv",
      101
     ],
     [
-     "rinci/MU_5m.csv",
+     "MU_5m.csv",
      71
     ],
     [
-     "rinci/SNDK_5m.csv",
+     "SNDK_5m.csv",
      46
     ],
     [
-     "rinci/MSTR_5m.csv",
+     "MSTR_5m.csv",
      15
     ],
     [
-     "rinci/SOXL_5m.csv",
+     "SOXL_5m.csv",
      14
     ],
     [
-     "rinci/SPCX_5m.csv",
+     "SPCX_5m.csv",
      7
     ],
     [
-     "rinci/HOT_5m.csv",
+     "HOT_5m.csv",
      3
     ],
     [
-     "rinci/CRCL_15m.csv",
+     "CRCL_15m.csv",
      1
     ],
     [
-     "rinci/MU_15m.csv",
+     "MU_15m.csv",
      1
     ],
     [
-     "rinci/RIF_5m.csv",
+     "RIF_5m.csv",
+     1
+    ],
+    [
+     "SNDK_15m.csv",
+     1
+    ],
+    [
+     "SPCX_15m.csv",
      1
     ]
    ]
   }
  },
- "bar": {
-  "min": 4,
-  "median": 4320,
-  "maks": 4287258,
-  "total": 12355768,
-  "n": 480
+ "berkas_bermasalah": {
+  "jumlah": 0,
+  "contoh": []
  },
- "hari": {
-  "min": 3.0,
-  "median": 179.83,
-  "maks": 180.0,
-  "total": 74336.3299999999,
+ "sebaran_bar": {
+  "min": 4,
+  "p10": 180,
+  "median": 4320,
+  "maks": 51841,
   "n": 475
  },
- "bersih": false
+ "sebaran_hari": {
+  "min": 3.0,
+  "p10": 45.39,
+  "median": 179.83,
+  "maks": 180.0,
+  "n": 475
+ },
+ "riwayat_pendek": {
+  "kriteria": "hari < 150",
+  "jumlah_berkas": 85,
+  "simbol": [
+   "AIGENSYN",
+   "ARX",
+   "BTW",
+   "CAP",
+   "CL",
+   "CRCL",
+   "GRAM",
+   "KORU",
+   "MSTR",
+   "MU",
+   "O",
+   "RE",
+   "SKHYNIX",
+   "SLX",
+   "SNDK",
+   "SOXL",
+   "SPCX"
+  ],
+  "terpendek": [
+   [
+    "GRAM_1d.csv",
+    3.0,
+    4
+   ],
+   [
+    "GRAM_4h.csv",
+    3.17,
+    20
+   ],
+   [
+    "GRAM_1h.csv",
+    3.25,
+    79
+   ],
+   [
+    "GRAM_15m.csv",
+    3.27,
+    315
+   ],
+   [
+    "GRAM_5m.csv",
+    3.27,
+    943
+   ],
+   [
+    "CAP_1d.csv",
+    8.0,
+    9
+   ],
+   [
+    "CAP_15m.csv",
+    8.1,
+    779
+   ],
+   [
+    "CAP_5m.csv",
+    8.11,
+    2336
+   ],
+   [
+    "CAP_1h.csv",
+    8.12,
+    196
+   ],
+   [
+    "CAP_4h.csv",
+    8.17,
+    50
+   ],
+   [
+    "O_1d.csv",
+    11.0,
+    12
+   ],
+   [
+    "O_15m.csv",
+    11.09,
+    1066
+   ],
+   [
+    "O_5m.csv",
+    11.09,
+    3196
+   ],
+   [
+    "O_1h.csv",
+    11.12,
+    268
+   ],
+   [
+    "O_4h.csv",
+    11.17,
+    68
+   ],
+   [
+    "ARX_1d.csv",
+    12.0,
+    13
+   ],
+   [
+    "ARX_4h.csv",
+    12.33,
+    75
+   ],
+   [
+    "ARX_15m.csv",
+    12.39,
+    1190
+   ],
+   [
+    "ARX_5m.csv",
+    12.39,
+    3569
+   ],
+   [
+    "ARX_1h.csv",
+    12.42,
+    299
+   ],
+   [
+    "KORU_1d.csv",
+    13.0,
+    14
+   ],
+   [
+    "KORU_4h.csv",
+    13.0,
+    79
+   ],
+   [
+    "KORU_15m.csv",
+    13.03,
+    1252
+   ],
+   [
+    "KORU_5m.csv",
+    13.03,
+    3753
+   ],
+   [
+    "KORU_1h.csv",
+    13.04,
+    314
+   ]
+  ]
+ },
+ "simbol_dengan_volume_nol": {
+  "catatan": "kandidat instrumen non-24/7 (saham/ETF) di dalam dataset 'pair'",
+  "jumlah_simbol": 8,
+  "rinci": {
+   "CRCL": 102,
+   "MU": 72,
+   "SNDK": 47,
+   "MSTR": 15,
+   "SOXL": 14,
+   "SPCX": 8,
+   "HOT": 3,
+   "RIF": 1
+  }
+ },
+ "bersih_semua_bendera": false
 }
 rc=0
