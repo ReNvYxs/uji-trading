@@ -1,7 +1,7 @@
 {
  "berkas": {
   "RINGKASAN_PILOT.json": {
-   "byte": 221,
+   "byte": 1896,
    "kunci": [
     "berkas",
     "hilang",
@@ -9,12 +9,77 @@
    ],
    "ok": true
   },
+  "RINGKAS_INVENTARIS.json": {
+   "byte": 1681,
+   "kunci": [
+    "bar",
+    "bendera",
+    "berkas_mentah",
+    "bersih",
+    "byte_mentah",
+    "hari",
+    "jumlah_entri_berkas",
+    "kunci_tingkat_atas"
+   ],
+   "ok": true
+  },
   "inventaris_dataset.json": {
-   "galat": "Expecting value: line 156 column 15 (char 1878)",
-   "ok": false
+   "byte": 125579,
+   "kunci": [
+    "berkas_bermasalah",
+    "berkas_diperiksa",
+    "data_dir",
+    "detik",
+    "jumlah_berkas_bermasalah",
+    "jumlah_berkas_csv",
+    "jumlah_simbol",
+    "lulus",
+    "per_tf",
+    "perintah",
+    "rinci",
+    "simbol",
+    "terpotong_batas_waktu",
+    "tf_tersedia"
+   ],
+   "ok": true
+  },
+  "konversi_bt_single_15m.json": {
+   "byte": 24,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "konversi_bt_single_4h.json": {
+   "byte": 24,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "konversi_integritas_single_15m.json": {
+   "byte": 24,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "konversi_integritas_single_4h.json": {
+   "byte": 24,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "konversi_inventaris.json": {
+   "byte": 41,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
   },
   "pilot_bt_single_15m.json": {
-   "byte": 12984,
+   "byte": 12990,
    "kunci": [
     "alasan_keluar",
     "breadth_pair_profit",
