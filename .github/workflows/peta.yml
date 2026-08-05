@@ -1,0 +1,153 @@
+name: peta
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/peta.yml'
+      - 'peta/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: peta
+  cancel-in-progress: true
+env:
+  MODUL_REPO: EnVyxS/lux-modul-trading
+  MODUL_REF: 8401b2327736a4cc5c588d211eb6911dde0842da
+  DATASET_REPO: EnVyxS/uji-trading
+  ASET_ID: '502033995'
+  ASET_SHA256: 79f906caaf9933d518c319821b77317e57ef15e00a30f849220024b8c6c1bff5
+  GIT_TERMINAL_PROMPT: '0'
+  AB95_PATH: klon_modul/scripts/ab95.py
+jobs:
+  peta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: siapkan bahan uji
+        run: |
+          bash alat/siapkan.sh
+          mkdir -p hasil/peta
+      - name: dependensi modul
+        run: |
+          python -m pip install --quiet --upgrade pip
+          python -m pip install --quiet -r klon_modul/requirements.txt
+          python -c "import numpy,pandas,pyarrow,yaml;print('dep OK')" | tee hasil/peta/log_dependensi.txt
+      - name: rekam siapkan
+        if: always()
+        run: bash alat/rekam.sh "peta: siapkan"
+
+      - name: peta multi_4h_ctx1d
+        continue-on-error: true
+        env:
+          LUX_KONFIG: multi_4h_ctx1d
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '1200'
+          LUX_BATAS_DETIK: '1500'
+          LUX_KELUARAN: hasil/peta/multi_4h_ctx1d.json
+        run: |
+          set +e
+          python3 peta/analisa2.py 2>&1 | tee hasil/peta/log_multi_4h_ctx1d.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/peta/log_multi_4h_ctx1d.txt
+      - name: rekam multi_4h_ctx1d
+        if: always()
+        run: bash alat/rekam.sh "peta multi_4h_ctx1d"
+
+      - name: peta single_4h stabilitas
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_4h
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '1200'
+          LUX_BATAS_DETIK: '1200'
+          LUX_KELUARAN: hasil/peta/single_4h.json
+        run: |
+          set +e
+          python3 peta/analisa2.py 2>&1 | tee hasil/peta/log_single_4h.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/peta/log_single_4h.txt
+      - name: rekam single_4h
+        if: always()
+        run: bash alat/rekam.sh "peta single_4h stabilitas"
+
+      - name: peta single_1h
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_1h
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '4400'
+          LUX_BATAS_DETIK: '3000'
+          LUX_KELUARAN: hasil/peta/single_1h.json
+        run: |
+          set +e
+          python3 peta/analisa2.py 2>&1 | tee hasil/peta/log_single_1h.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/peta/log_single_1h.txt
+      - name: rekam single_1h
+        if: always()
+        run: bash alat/rekam.sh "peta single_1h"
+
+      - name: peta multi_1h_ctx4h
+        continue-on-error: true
+        env:
+          LUX_KONFIG: multi_1h_ctx4h
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '4400'
+          LUX_BATAS_DETIK: '3300'
+          LUX_KELUARAN: hasil/peta/multi_1h_ctx4h.json
+        run: |
+          set +e
+          python3 peta/analisa2.py 2>&1 | tee hasil/peta/log_multi_1h_ctx4h.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/peta/log_multi_1h_ctx4h.txt
+      - name: rekam multi_1h_ctx4h
+        if: always()
+        run: bash alat/rekam.sh "peta multi_1h_ctx4h"
+
+      - name: peta single_15m stabilitas
+        continue-on-error: true
+        env:
+          LUX_KONFIG: single_15m
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '6000'
+          LUX_BATAS_DETIK: '4200'
+          LUX_KELUARAN: hasil/peta/single_15m.json
+        run: |
+          set +e
+          python3 peta/analisa2.py 2>&1 | tee hasil/peta/log_single_15m.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/peta/log_single_15m.txt
+      - name: rekam single_15m
+        if: always()
+        run: bash alat/rekam.sh "peta single_15m stabilitas"
+
+      - name: peta multi_15m_ctx1h
+        continue-on-error: true
+        env:
+          LUX_KONFIG: multi_15m_ctx1h
+          LUX_VARIAN: asli
+          LUX_MAKS_SIMBOL: '0'
+          LUX_MAKS_BAR: '6000'
+          LUX_BATAS_DETIK: '4200'
+          LUX_KELUARAN: hasil/peta/multi_15m_ctx1h.json
+        run: |
+          set +e
+          python3 peta/analisa2.py 2>&1 | tee hasil/peta/log_multi_15m_ctx1h.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/peta/log_multi_15m_ctx1h.txt
+      - name: rekam multi_15m_ctx1h
+        if: always()
+        run: bash alat/rekam.sh "peta multi_15m_ctx1h"
+
+      - name: indeks peta
+        if: always()
+        continue-on-error: true
+        run: python3 peta/indeks.py 2>&1 | tee hasil/peta/log_indeks.txt
+      - name: rekam indeks
+        if: always()
+        run: bash alat/rekam.sh "indeks peta TF"
