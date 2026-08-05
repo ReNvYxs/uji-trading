@@ -31,9 +31,12 @@ jobs:
 
       - name: siapkan bahan uji
         run: bash alat/siapkan.sh
+      - name: bedah runner
+        continue-on-error: true
+        run: bash alat/bedah_runner.sh
       - name: rekam siapkan
         if: always()
-        run: bash alat/rekam.sh "siapkan"
+        run: bash alat/rekam.sh "siapkan + bedah runner"
 
       - name: dependensi modul
         run: |
@@ -97,24 +100,6 @@ jobs:
       - name: rekam integritas 4h
         if: always()
         run: bash alat/rekam.sh "integritas single_4h"
-
-      - name: backtest pilot single_15m
-        continue-on-error: true
-        env:
-          LUX_KONFIG: single_15m
-          LUX_VARIAN: asli
-          LUX_MAKS_SIMBOL: '8'
-          LUX_MAKS_BAR: '3000'
-          LUX_BATAS_DETIK: '1500'
-          LUX_KELUARAN: hasil/bt95/pilot_bt_single_15m.json
-          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_bt_single_15m.json
-        run: |
-          set +e
-          python3 alat/jalankan_ab95.py backtest 2>&1 | tee hasil/bt95/log_bt_single_15m.txt
-          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_bt_single_15m.txt
-      - name: rekam bt 15m
-        if: always()
-        run: bash alat/rekam.sh "backtest pilot single_15m"
 
       - name: backtest pilot single_4h
         continue-on-error: true
