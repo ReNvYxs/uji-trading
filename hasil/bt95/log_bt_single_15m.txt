@@ -1,0 +1,170 @@
+{"varian": {"varian": "asli", "diterapkan": false}}
+konfig=single_15m entry_tf=15m ctx=() simbol=8 maks_bar=3000
+[1/8] 1000BONK trade=71 pnl=220.0323 (14.0s)
+[2/8] 1000PEPE trade=67 pnl=-25.4864 (15.1s)
+[3/8] 1000SHIB trade=58 pnl=-174.4511 (15.2s)
+[4/8] AAVE trade=70 pnl=-178.2868 (11.7s)
+[5/8] ADA trade=65 pnl=-7.8204 (12.8s)
+[6/8] AIGENSYN trade=54 pnl=-375.6531 (7.3s)
+[7/8] ALLO trade=86 pnl=-2.2558 (12.8s)
+[8/8] ARPA trade=50 pnl=102.3988 (8.1s)
+{
+ "perintah": "backtest",
+ "varian": {
+  "varian": "asli",
+  "diterapkan": false
+ },
+ "konfig": "single_15m",
+ "entry_tf": "15m",
+ "context_tfs": [],
+ "maks_bar": 3000,
+ "saring_biaya": true,
+ "modal_awal_per_simbol": 1000.0,
+ "metodologi": "tiap simbol = akun terpisah modal sama; angka gabungan adalah agregat statistik lintas simbol untuk mengukur edge, bukan kurva ekuitas satu akun",
+ "simbol_tersedia": 8,
+ "simbol_diproses": 8,
+ "simbol_gagal": {},
+ "detik": 97.0,
+ "total": {
+  "trade": 521,
+  "menang": 222,
+  "win_rate": 0.4261,
+  "pnl_bersih": -441.5225,
+  "pnl_kotor": 167.339,
+  "biaya": 608.8614,
+  "profit_factor_bersih": 0.9342,
+  "profit_factor_kotor": 1.0265,
+  "expectancy_r": -0.0382,
+  "edge_kotor_per_trade": 0.3212,
+  "biaya_per_trade": 1.1686,
+  "max_drawdown_usd": 937.3344,
+  "sampel_cukup": true,
+  "bar_dievaluasi": 5822,
+  "entry_ditolak_biaya": 141,
+  "entry_batal_gap": 0,
+  "tolak_biaya_per_kode": {
+   "biaya_melebihi_batas_risiko": 127,
+   "tp1_terlalu_dekat_terhadap_biaya": 14
+  }
+ },
+ "kandidat_per_strategi": {},
+ "pair_dengan_trade": 8,
+ "pair_profit": 2,
+ "breadth_pair_profit": 0.25,
+ "alasan_keluar": {
+  "akhir_data": 5,
+  "sl": 367,
+  "tp": 149
+ },
+ "per_arah": {
+  "LONG": {
+   "trade": 267,
+   "menang": 118,
+   "win_rate": 0.4419,
+   "pnl_bersih": 191.745,
+   "pnl_kotor": 495.0262,
+   "biaya": 303.2812,
+   "profit_factor_bersih": 1.0578,
+   "profit_factor_kotor": 1.1586,
+   "expectancy_r": 0.0341,
+   "edge_kotor_per_trade": 1.854,
+   "biaya_per_trade": 1.1359,
+   "max_drawdown_usd": 919.6577,
+   "sampel_cukup": true
+  },
+  "SHORT": {
+   "trade": 254,
+   "menang": 104,
+   "win_rate": 0.4094,
+   "pnl_bersih": -633.2675,
+   "pnl_kotor": -327.6872,
+   "biaya": 305.5802,
+   "profit_factor_bersih": 0.8134,
+   "profit_factor_kotor": 0.897,
+   "expectancy_r": -0.1142,
+   "edge_kotor_per_trade": -1.2901,
+   "biaya_per_trade": 1.2031,
+   "max_drawdown_usd": 733.7374,
+   "sampel_cukup": true
+  }
+ },
+ "per_kelompok": {
+  "level_harga": {
+   "trade": 202,
+   "menang": 90,
+   "win_rate": 0.4455,
+   "pnl_bersih": -369.9672,
+   "pnl_kotor": -102.9027,
+   "biaya": 267.0645,
+   "profit_factor_bersih": 0.8625,
+   "profit_factor_kotor": 0.959,
+   "expectancy_r": -0.0735,
+   "edge_kotor_per_trade": -0.5094,
+   "biaya_per_trade": 1.3221,
+   "max_drawdown_usd": 506.0666,
+   "sampel_cukup": true
+  },
+  "aliran_volume": {
+   "trade": 175,
+   "menang": 77,
+   "win_rate": 0.44,
+   "pnl_bersih": -105.4687,
+   "pnl_kotor": 99.8156,
+   "biaya": 205.2843,
+   "profit_factor_bersih": 0.9529,
+   "profit_factor_kotor": 1.0473,
+   "expectancy_r": -0.0321,
+   "edge_kotor_per_trade": 0.5704,
+   "biaya_per_trade": 1.1731,
+   "max_drawdown_usd": 476.6888,
+   "sampel_cukup": false
+  },
+  "pola_klasik": {
+   "trade": 115,
+   "menang": 46,
+   "win_rate": 0.4,
+   "pnl_bersih": 136.5941,
+   "pnl_kotor": 239.3761,
+   "biaya": 102.782,
+   "profit_factor_bersih": 1.0978,
+   "profit_factor_kotor": 1.181,
+   "expectancy_r": 0.0503,
+   "edge_kotor_per_trade": 2.0815,
+   "biaya_per_trade": 0.8938,
+   "max_drawdown_usd": 346.2472,
+   "sampel_cukup": false
+  },
+  "struktur_modern": {
+   "trade": 21,
+   "menang": 6,
+   "win_rate": 0.2857,
+   "pnl_bersih": -136.5012,
+   "pnl_kotor": -113.6514,
+   "biaya": 22.8498,
+   "profit_factor_bersih": 0.4886,
+   "profit_factor_kotor": 0.5415,
+   "expectancy_r": -0.3015,
+   "edge_kotor_per_trade": -5.412,
+   "biaya_per_trade": 1.0881,
+   "max_drawdown_usd": 195.1364,
+   "sampel_cukup": false
+  },
+  "indikator_momentum": {
+   "trade": 8,
+   "menang": 3,
+   "win_rate": 0.375,
+   "pnl_bersih": 33.8206,
+   "pnl_kotor": 44.7015,
+   "biaya": 10.8808,
+   "profit_factor_bersih": 1.2812,
+   "profit_factor_kotor": 1.4016,
+   "expectancy_r": 0.1398,
+   "edge_kotor_per_trade": 5.5877,
+   "biaya_per_trade": 1.3601,
+   "max_drawdown_usd": 74.6804,
+   "sampel_cukup": false
+  }
+ }
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/bt95/pilot_bt_single_15m.json
+rc=0
