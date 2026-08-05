@@ -1,0 +1,425 @@
+{
+ "berkas": {
+  "RINGKASAN_PILOT.json": {
+   "byte": 3377,
+   "kunci": [
+    "berkas",
+    "hilang",
+    "pilot_lengkap"
+   ],
+   "ok": true
+  },
+  "RINGKAS_INVENTARIS.json": {
+   "byte": 4230,
+   "kunci": [
+    "bendera",
+    "berkas_bermasalah",
+    "berkas_mentah",
+    "bersih_semua_bendera",
+    "byte_mentah",
+    "jalur_agregat_diabaikan",
+    "jumlah_entri_per_berkas",
+    "per_tf",
+    "riwayat_pendek",
+    "sebaran_bar",
+    "sebaran_hari",
+    "simbol_dengan_volume_nol",
+    "verdict_modul"
+   ],
+   "ok": true
+  },
+  "analisa_single_15m_asli.json": {
+   "byte": 58250,
+   "detik": 3742.2,
+   "kunci": [
+    "alasan_keluar",
+    "breadth_pair_profit",
+    "catatan",
+    "context_tfs",
+    "detik",
+    "entry_tf",
+    "galat",
+    "konfig",
+    "maks_bar",
+    "metodologi",
+    "modal_awal_per_simbol",
+    "pair_dengan_trade",
+    "pair_profit",
+    "per_arah",
+    "per_kelas_dataset",
+    "per_kelompok",
+    "per_simbol",
+    "per_strategi",
+    "perintah",
+    "saring_biaya",
+    "segmentasi",
+    "simbol_diproses",
+    "simbol_gagal",
+    "simbol_tanpa_trade",
+    "simbol_tersedia",
+    "terpotong_batas_waktu",
+    "total",
+    "varian"
+   ],
+   "ok": true,
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 11576.7227,
+    "expectancy_r": -0.0347,
+    "menang": 4708,
+    "pf_bersih": 0.9394,
+    "pf_kotor": 1.0241,
+    "pnl_bersih": -8420.2389,
+    "pnl_kotor": 3156.4838,
+    "trade": 11192,
+    "win_rate": 0.4207
+   },
+   "varian": {
+    "diterapkan": false,
+    "varian": "asli"
+   }
+  },
+  "analisa_single_4h_asli.json": {
+   "byte": 56318,
+   "detik": 657.9,
+   "kunci": [
+    "alasan_keluar",
+    "breadth_pair_profit",
+    "catatan",
+    "context_tfs",
+    "detik",
+    "diagnostik_pipeline",
+    "entry_tf",
+    "galat",
+    "konfig",
+    "maks_bar",
+    "metodologi",
+    "modal_awal_per_simbol",
+    "pair_dengan_trade",
+    "pair_profit",
+    "per_arah",
+    "per_kelas_dataset",
+    "per_kelompok",
+    "per_simbol",
+    "per_strategi",
+    "perintah",
+    "saring_biaya",
+    "segmentasi",
+    "simbol_diproses",
+    "simbol_gagal",
+    "simbol_tanpa_trade",
+    "simbol_tersedia",
+    "terpotong_batas_waktu",
+    "total",
+    "varian"
+   ],
+   "ok": true,
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 813.0462,
+    "expectancy_r": 0.0117,
+    "menang": 905,
+    "pf_bersih": 1.0206,
+    "pf_kotor": 1.0529,
+    "pnl_bersih": 539.0089,
+    "pnl_kotor": 1352.0551,
+    "trade": 2092,
+    "win_rate": 0.4326
+   },
+   "varian": {
+    "diterapkan": false,
+    "varian": "asli"
+   }
+  },
+  "analisa_single_4h_final_bar_per_hari.json": {
+   "byte": 56630,
+   "detik": 668.1,
+   "kunci": [
+    "alasan_keluar",
+    "breadth_pair_profit",
+    "catatan",
+    "context_tfs",
+    "detik",
+    "diagnostik_pipeline",
+    "entry_tf",
+    "galat",
+    "konfig",
+    "maks_bar",
+    "metodologi",
+    "modal_awal_per_simbol",
+    "pair_dengan_trade",
+    "pair_profit",
+    "per_arah",
+    "per_kelas_dataset",
+    "per_kelompok",
+    "per_simbol",
+    "per_strategi",
+    "perintah",
+    "saring_biaya",
+    "segmentasi",
+    "simbol_diproses",
+    "simbol_gagal",
+    "simbol_tanpa_trade",
+    "simbol_tersedia",
+    "terpotong_batas_waktu",
+    "total",
+    "varian"
+   ],
+   "ok": true,
+   "simbol_diproses": 95,
+   "terpotong_batas_waktu": false,
+   "total": {
+    "biaya": 736.5897,
+    "expectancy_r": -0.0235,
+    "menang": 844,
+    "pf_bersih": 0.9642,
+    "pf_kotor": 0.9932,
+    "pnl_bersih": -905.8863,
+    "pnl_kotor": -169.2966,
+    "trade": 2002,
+    "win_rate": 0.4216
+   },
+   "varian": {
+    "diterapkan": true,
+    "nilai_bar_per_hari": {
+     "15m": {
+      "asli": 96,
+      "varian": 96
+     },
+     "1d": {
+      "asli": 1,
+      "varian": 24
+     },
+     "1h": {
+      "asli": 24,
+      "varian": 24
+     },
+     "4h": {
+      "asli": 6,
+      "varian": 24
+     },
+     "5m": {
+      "asli": 288,
+      "varian": 288
+     }
+    },
+    "varian": "final_bar_per_hari"
+   }
+  },
+  "inventaris_dataset.json": {
+   "byte": 125579,
+   "detik": 33.7,
+   "kunci": [
+    "berkas_bermasalah",
+    "berkas_diperiksa",
+    "data_dir",
+    "detik",
+    "jumlah_berkas_bermasalah",
+    "jumlah_berkas_csv",
+    "jumlah_simbol",
+    "lulus",
+    "per_tf",
+    "perintah",
+    "rinci",
+    "simbol",
+    "terpotong_batas_waktu",
+    "tf_tersedia"
+   ],
+   "lulus": true,
+   "ok": true,
+   "terpotong_batas_waktu": false
+  },
+  "konversi_bt_single_15m.json": {
+   "byte": 24,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "konversi_bt_single_4h.json": {
+   "byte": 24,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "konversi_integritas_single_15m.json": {
+   "byte": 24,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "konversi_integritas_single_4h.json": {
+   "byte": 24,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "konversi_inventaris.json": {
+   "byte": 41,
+   "kunci": [
+    "konversi_tipe"
+   ],
+   "ok": true
+  },
+  "pilot_bt_single_15m.json": {
+   "byte": 12990,
+   "detik": 107.6,
+   "kunci": [
+    "alasan_keluar",
+    "breadth_pair_profit",
+    "context_tfs",
+    "detik",
+    "entry_tf",
+    "kandidat_per_strategi",
+    "konfig",
+    "maks_bar",
+    "metodologi",
+    "modal_awal_per_simbol",
+    "pair_dengan_trade",
+    "pair_profit",
+    "per_arah",
+    "per_kelompok",
+    "per_simbol",
+    "per_strategi",
+    "perintah",
+    "saring_biaya",
+    "simbol_diproses",
+    "simbol_gagal",
+    "simbol_tersedia",
+    "total",
+    "varian"
+   ],
+   "ok": true,
+   "simbol_diproses": 8,
+   "total": {
+    "biaya": 621.061,
+    "expectancy_r": -0.0511,
+    "menang": 226,
+    "pf_bersih": null,
+    "pf_kotor": null,
+    "pnl_bersih": -542.9829,
+    "pnl_kotor": 78.0781,
+    "trade": 536,
+    "win_rate": 0.4216
+   },
+   "varian": {
+    "diterapkan": false,
+    "varian": "asli"
+   }
+  },
+  "pilot_bt_single_4h.json": {
+   "byte": 11047,
+   "detik": 8.6,
+   "kunci": [
+    "alasan_keluar",
+    "breadth_pair_profit",
+    "context_tfs",
+    "detik",
+    "entry_tf",
+    "kandidat_per_strategi",
+    "konfig",
+    "maks_bar",
+    "metodologi",
+    "modal_awal_per_simbol",
+    "pair_dengan_trade",
+    "pair_profit",
+    "per_arah",
+    "per_kelompok",
+    "per_simbol",
+    "per_strategi",
+    "perintah",
+    "saring_biaya",
+    "simbol_diproses",
+    "simbol_gagal",
+    "simbol_tersedia",
+    "total",
+    "varian"
+   ],
+   "ok": true,
+   "simbol_diproses": 8,
+   "total": {
+    "biaya": 70.7656,
+    "expectancy_r": 0.0388,
+    "menang": 80,
+    "pf_bersih": null,
+    "pf_kotor": null,
+    "pnl_bersih": 208.4327,
+    "pnl_kotor": 279.1983,
+    "trade": 170,
+    "win_rate": 0.4706
+   },
+   "varian": {
+    "diterapkan": false,
+    "varian": "asli"
+   }
+  },
+  "pilot_integritas_single_15m.json": {
+   "byte": 973,
+   "detik": 9.0,
+   "kunci": [
+    "detik",
+    "jumlah_strategi_registry",
+    "konfig",
+    "lulus",
+    "maks_bar",
+    "per_simbol",
+    "perintah",
+    "simbol_gagal",
+    "uji",
+    "varian"
+   ],
+   "lulus": true,
+   "ok": true,
+   "varian": {
+    "diterapkan": false,
+    "varian": "asli"
+   }
+  },
+  "pilot_integritas_single_4h.json": {
+   "byte": 971,
+   "detik": 4.5,
+   "kunci": [
+    "detik",
+    "jumlah_strategi_registry",
+    "konfig",
+    "lulus",
+    "maks_bar",
+    "per_simbol",
+    "perintah",
+    "simbol_gagal",
+    "uji",
+    "varian"
+   ],
+   "lulus": true,
+   "ok": true,
+   "varian": {
+    "diterapkan": false,
+    "varian": "asli"
+   }
+  },
+  "probe_kandidat.json": {
+   "byte": 2655,
+   "kunci": [
+    "ab95",
+    "backtester",
+    "catatan",
+    "galat",
+    "kesimpulan",
+    "konfig",
+    "maks_bar",
+    "pipeline_internal_backtester",
+    "pipeline_terpisah",
+    "simbol_diuji",
+    "simbol_tersedia"
+   ],
+   "ok": true
+  }
+ },
+ "hilang": [],
+ "lengkap": true
+}
