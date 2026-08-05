@@ -1,0 +1,283 @@
+{
+ "konfig": "multi_1h_ctx4h",
+ "varian": {
+  "varian": "asli",
+  "diterapkan": false
+ },
+ "entry_tf": "1h",
+ "context_tfs": [
+  "4h"
+ ],
+ "simbol_diproses": 95,
+ "terpotong_batas_waktu": false,
+ "detik": 1206.6,
+ "total": {
+  "trade": 5239,
+  "menang": 2008,
+  "win_rate": 0.3833,
+  "pnl_bersih": -3181.6397,
+  "pnl_kotor": -118.7425,
+  "biaya": 3062.8972,
+  "pf_bersih": 0.9546,
+  "pf_kotor": 0.9983,
+  "tanpa_trade_rugi": false,
+  "biaya_per_trade": 0.5846,
+  "edge_kotor_per_trade": -0.0227,
+  "pnl_bersih_per_trade": -0.6073,
+  "sampel_cukup": true,
+  "expectancy_r": -0.0267,
+  "r_menang": 1.5527,
+  "r_kalah": -1.0083,
+  "bar_dievaluasi": 19467,
+  "entry_ditolak_biaya": 185,
+  "entry_batal_gap": 0,
+  "tolak_biaya_per_kode": {
+   "biaya_melebihi_batas_risiko": 154,
+   "tp1_terlalu_dekat_terhadap_biaya": 31
+  }
+ },
+ "per_arah": {
+  "SHORT": {
+   "trade": 2656,
+   "menang": 1035,
+   "win_rate": 0.3897,
+   "pnl_bersih": -158.6417,
+   "pnl_kotor": 1432.6104,
+   "biaya": 1591.2522,
+   "pf_bersih": 0.9955,
+   "pf_kotor": 1.0421,
+   "tanpa_trade_rugi": false,
+   "biaya_per_trade": 0.5991,
+   "edge_kotor_per_trade": 0.5394,
+   "pnl_bersih_per_trade": -0.0597,
+   "sampel_cukup": true,
+   "expectancy_r": -0.0006,
+   "r_menang": 1.5779,
+   "r_kalah": -1.0084
+  },
+  "LONG": {
+   "trade": 2583,
+   "menang": 973,
+   "win_rate": 0.3767,
+   "pnl_bersih": -3022.998,
+   "pnl_kotor": -1551.3529,
+   "biaya": 1471.6451,
+   "pf_bersih": 0.9135,
+   "pf_kotor": 0.9542,
+   "tanpa_trade_rugi": false,
+   "biaya_per_trade": 0.5697,
+   "edge_kotor_per_trade": -0.6006,
+   "pnl_bersih_per_trade": -1.1703,
+   "sampel_cukup": true,
+   "expectancy_r": -0.0536,
+   "r_menang": 1.526,
+   "r_kalah": -1.0082
+  }
+ },
+ "per_kelas_dataset": {
+  "kripto_24_7": {
+   "trade": 4799,
+   "menang": 1834,
+   "win_rate": 0.3822,
+   "pnl_bersih": -3225.0689,
+   "pnl_kotor": -413.2609,
+   "biaya": 2811.808,
+   "pf_bersih": 0.9499,
+   "pf_kotor": 0.9934,
+   "tanpa_trade_rugi": false,
+   "biaya_per_trade": 0.5859,
+   "edge_kotor_per_trade": -0.0861,
+   "pnl_bersih_per_trade": -0.672,
+   "sampel_cukup": true,
+   "expectancy_r": -0.0299,
+   "r_menang": 1.5558,
+   "r_kalah": -1.0107
+  },
+  "riwayat_pendek": {
+   "trade": 287,
+   "menang": 108,
+   "win_rate": 0.3763,
+   "pnl_bersih": -134.6102,
+   "pnl_kotor": 28.5016,
+   "biaya": 163.1118,
+   "pf_bersih": 0.9648,
+   "pf_kotor": 1.0077,
+   "tanpa_trade_rugi": false,
+   "biaya_per_trade": 0.5683,
+   "edge_kotor_per_trade": 0.0993,
+   "pnl_bersih_per_trade": -0.469,
+   "sampel_cukup": true,
+   "expectancy_r": -0.0225,
+   "r_menang": 1.5575,
+   "r_kalah": -0.9758
+  },
+  "mirip_saham": {
+   "trade": 153,
+   "menang": 66,
+   "win_rate": 0.4314,
+   "pnl_bersih": 178.0394,
+   "pnl_kotor": 266.0169,
+   "biaya": 87.9775,
+   "pf_bersih": 1.094,
+   "pf_kotor": 1.1449,
+   "tanpa_trade_rugi": false,
+   "biaya_per_trade": 0.575,
+   "edge_kotor_per_trade": 1.7387,
+   "pnl_bersih_per_trade": 1.1637,
+   "sampel_cukup": false,
+   "expectancy_r": 0.064,
+   "r_menang": 1.4592,
+   "r_kalah": -0.9944
+  }
+ },
+ "alasan_keluar": {
+  "akhir_data": 86,
+  "sl": 3832,
+  "tp": 1321
+ },
+ "pair_dengan_trade": 92,
+ "pair_profit": 39,
+ "breadth_pair_profit": 0.4239,
+ "daftar_strategi_layak": [
+  "donchian_breakout",
+  "smc_ob_fvg"
+ ],
+ "daftar_strategi_rugi_dua_paruh": [
+  "breaker_block",
+  "level_bulat",
+  "market_structure_shift",
+  "order_block_retest",
+  "pivot_reversal",
+  "vp_tepi_value_area"
+ ],
+ "stabilitas_ringkas": {
+  "breaker_block": {
+   "trade": 777,
+   "pf": 0.957,
+   "expR": -0.0287,
+   "pnl": -494.1029,
+   "p1_pnl": -149.5311,
+   "p2_pnl": -344.5718,
+   "layak": false
+  },
+  "order_block_retest": {
+   "trade": 691,
+   "pf": 0.8924,
+   "expR": -0.0686,
+   "pnl": -1101.5187,
+   "p1_pnl": -91.0856,
+   "p2_pnl": -1010.4331,
+   "layak": false
+  },
+  "level_bulat": {
+   "trade": 673,
+   "pf": 0.8365,
+   "expR": -0.0963,
+   "pnl": -1391.2316,
+   "p1_pnl": -1031.0256,
+   "p2_pnl": -360.2061,
+   "layak": false
+  },
+  "vwap_reclaim": {
+   "trade": 653,
+   "pf": 1.0093,
+   "expR": 0.0149,
+   "pnl": 80.0098,
+   "p1_pnl": 233.4787,
+   "p2_pnl": -153.4689,
+   "layak": false
+  },
+  "market_structure_shift": {
+   "trade": 461,
+   "pf": 0.812,
+   "expR": -0.1251,
+   "pnl": -1177.3668,
+   "p1_pnl": -702.4723,
+   "p2_pnl": -474.8945,
+   "layak": false
+  },
+  "smc_ob_fvg": {
+   "trade": 337,
+   "pf": 1.2045,
+   "expR": 0.1274,
+   "pnl": 858.198,
+   "p1_pnl": 644.9216,
+   "p2_pnl": 213.2764,
+   "layak": true
+  },
+  "pivot_reversal": {
+   "trade": 321,
+   "pf": 0.8151,
+   "expR": -0.1216,
+   "pnl": -814.3804,
+   "p1_pnl": -379.6632,
+   "p2_pnl": -434.7172,
+   "layak": false
+  },
+  "vp_tepi_value_area": {
+   "trade": 285,
+   "pf": 0.7572,
+   "expR": -0.1435,
+   "pnl": -947.384,
+   "p1_pnl": -638.5218,
+   "p2_pnl": -308.8622,
+   "layak": false
+  },
+  "squeeze_breakout": {
+   "trade": 277,
+   "pf": 1.115,
+   "expR": 0.069,
+   "pnl": 380.087,
+   "p1_pnl": 739.9746,
+   "p2_pnl": -359.8877,
+   "layak": false
+  },
+  "donchian_breakout": {
+   "trade": 220,
+   "pf": 1.8758,
+   "expR": 0.3976,
+   "pnl": 1983.5313,
+   "p1_pnl": 1149.0087,
+   "p2_pnl": 834.5227,
+   "layak": true
+  },
+  "fvg_fill": {
+   "trade": 211,
+   "pf": 1.0279,
+   "expR": 0.0343,
+   "pnl": 75.741,
+   "p1_pnl": -153.0857,
+   "p2_pnl": 228.8267,
+   "layak": false
+  },
+  "triangle_breakout": {
+   "trade": 144,
+   "pf": 0.6352,
+   "expR": -0.2598,
+   "pnl": -771.0248,
+   "p1_pnl": -239.2254,
+   "p2_pnl": -531.7993,
+   "layak": false
+  },
+  "cup_and_handle": {
+   "trade": 54,
+   "pf": 1.3687,
+   "expR": 0.1728,
+   "pnl": 171.0374,
+   "p1_pnl": 75.575,
+   "p2_pnl": 95.4624,
+   "layak": false
+  },
+  "ict_liquidity_sweep": {
+   "trade": 36,
+   "pf": 0.5494,
+   "expR": -0.352,
+   "pnl": -249.0021,
+   "p1_pnl": -87.9377,
+   "p2_pnl": -161.0644,
+   "layak": false
+  }
+ }
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/peta/multi_1h_ctx4h.json
+rc=0
