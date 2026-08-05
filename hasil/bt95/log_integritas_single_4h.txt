@@ -12,7 +12,7 @@ AAVE: bar=1080 indeks=25 entry=4
  "konfig": "single_4h",
  "maks_bar": 2500,
  "jumlah_strategi_registry": 26,
- "detik": 2.6,
+ "detik": 2.7,
  "simbol_gagal": {},
  "uji": {
   "determinisme": {
