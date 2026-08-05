@@ -1,0 +1,255 @@
+{
+ "konfig": "single_4h",
+ "varian": {
+  "varian": "final_bar_per_hari",
+  "diterapkan": true,
+  "nilai_bar_per_hari": {
+   "5m": {
+    "asli": 288,
+    "varian": 288
+   },
+   "15m": {
+    "asli": 96,
+    "varian": 96
+   },
+   "1h": {
+    "asli": 24,
+    "varian": 24
+   },
+   "4h": {
+    "asli": 6,
+    "varian": 24
+   },
+   "1d": {
+    "asli": 1,
+    "varian": 24
+   }
+  }
+ },
+ "entry_tf": "4h",
+ "simbol_tersedia": 95,
+ "simbol_diproses": 95,
+ "terpotong_batas_waktu": false,
+ "detik": 668.1,
+ "total": {
+  "trade": 2002,
+  "menang": 844,
+  "win_rate": 0.4216,
+  "pnl_bersih": -905.8863,
+  "pnl_kotor": -169.2966,
+  "biaya": 736.5897,
+  "pf_bersih": 0.9642,
+  "pf_kotor": 0.9932,
+  "biaya_per_trade": 0.3679,
+  "edge_kotor_per_trade": -0.0846,
+  "pnl_bersih_per_trade": -0.4525,
+  "sampel_cukup": true,
+  "expectancy_r": -0.0235,
+  "r_menang": 1.3076,
+  "r_kalah": -0.9937,
+  "bar_dievaluasi": 12683,
+  "entry_ditolak_biaya": 7,
+  "entry_batal_gap": 0,
+  "tolak_biaya_per_kode": {
+   "biaya_melebihi_batas_risiko": 3,
+   "tp1_terlalu_dekat_terhadap_biaya": 4
+  }
+ },
+ "per_arah": {
+  "SHORT": {
+   "trade": 1077,
+   "menang": 438,
+   "win_rate": 0.4067,
+   "pnl_bersih": -2793.8492,
+   "pnl_kotor": -2390.2159,
+   "biaya": 403.6333,
+   "pf_bersih": 0.8027,
+   "pf_kotor": 0.8279,
+   "biaya_per_trade": 0.3748,
+   "edge_kotor_per_trade": -2.2193,
+   "pnl_bersih_per_trade": -2.5941,
+   "sampel_cukup": true,
+   "expectancy_r": -0.1176,
+   "r_menang": 1.1801,
+   "r_kalah": -1.0071
+  },
+  "LONG": {
+   "trade": 925,
+   "menang": 406,
+   "win_rate": 0.4389,
+   "pnl_bersih": 1887.9628,
+   "pnl_kotor": 2220.9193,
+   "biaya": 332.9564,
+   "pf_bersih": 1.169,
+   "pf_kotor": 1.2028,
+   "biaya_per_trade": 0.36,
+   "edge_kotor_per_trade": 2.401,
+   "pnl_bersih_per_trade": 2.041,
+   "sampel_cukup": true,
+   "expectancy_r": 0.086,
+   "r_menang": 1.4452,
+   "r_kalah": -0.9772
+  }
+ },
+ "per_kelas_dataset": {
+  "kripto_24_7": {
+   "trade": 1868,
+   "menang": 789,
+   "win_rate": 0.4224,
+   "pnl_bersih": -609.2401,
+   "pnl_kotor": 80.3629,
+   "biaya": 689.603,
+   "pf_bersih": 0.9742,
+   "pf_kotor": 1.0035,
+   "biaya_per_trade": 0.3692,
+   "edge_kotor_per_trade": 0.043,
+   "pnl_bersih_per_trade": -0.3261,
+   "sampel_cukup": true,
+   "expectancy_r": -0.0181,
+   "r_menang": 1.3151,
+   "r_kalah": -0.993
+  },
+  "riwayat_pendek": {
+   "trade": 86,
+   "menang": 39,
+   "win_rate": 0.4535,
+   "pnl_bersih": -43.0835,
+   "pnl_kotor": -9.7387,
+   "biaya": 33.3448,
+   "pf_bersih": 0.9589,
+   "pf_kotor": 0.9905,
+   "biaya_per_trade": 0.3877,
+   "edge_kotor_per_trade": -0.1132,
+   "pnl_bersih_per_trade": -0.501,
+   "sampel_cukup": false,
+   "expectancy_r": -0.0214,
+   "r_menang": 1.1834,
+   "r_kalah": -1.0211
+  },
+  "mirip_saham": {
+   "trade": 48,
+   "menang": 16,
+   "win_rate": 0.3333,
+   "pnl_bersih": -253.5627,
+   "pnl_kotor": -239.9208,
+   "biaya": 13.6419,
+   "pf_bersih": 0.6272,
+   "pf_kotor": 0.6415,
+   "biaya_per_trade": 0.2842,
+   "edge_kotor_per_trade": -4.9984,
+   "pnl_bersih_per_trade": -5.2826,
+   "sampel_cukup": false,
+   "expectancy_r": -0.2365,
+   "r_menang": 1.2422,
+   "r_kalah": -0.9759
+  }
+ },
+ "alasan_keluar": {
+  "akhir_data": 71,
+  "sl": 1436,
+  "tp": 495
+ },
+ "pair_dengan_trade": 85,
+ "pair_profit": 44,
+ "breadth_pair_profit": 0.5176,
+ "per_strategi_ringkas": {
+  "vwap_reclaim": {
+   "trade": 986,
+   "pf_bersih": 0.9622,
+   "expectancy_r": -0.0266,
+   "pnl_bersih": -492.5845
+  },
+  "level_bulat": {
+   "trade": 249,
+   "pf_bersih": 0.9483,
+   "expectancy_r": -0.0301,
+   "pnl_bersih": -155.679
+  },
+  "pivot_reversal": {
+   "trade": 241,
+   "pf_bersih": 0.7434,
+   "expectancy_r": -0.1513,
+   "pnl_bersih": -828.4371
+  },
+  "vp_tepi_value_area": {
+   "trade": 223,
+   "pf_bersih": 1.1344,
+   "expectancy_r": 0.0653,
+   "pnl_bersih": 344.6419
+  },
+  "triangle_breakout": {
+   "trade": 141,
+   "pf_bersih": 0.6715,
+   "expectancy_r": -0.1964,
+   "pnl_bersih": -611.3724
+  },
+  "breakout_volume": {
+   "trade": 46,
+   "pf_bersih": 3.4871,
+   "expectancy_r": 0.7555,
+   "pnl_bersih": 800.9608
+  },
+  "cup_and_handle": {
+   "trade": 44,
+   "pf_bersih": 1.05,
+   "expectancy_r": 0.0276,
+   "pnl_bersih": 23.3758
+  },
+  "ict_liquidity_sweep": {
+   "trade": 28,
+   "pf_bersih": 0.879,
+   "expectancy_r": -0.0513,
+   "pnl_bersih": -45.639
+  },
+  "ema_bounce_200": {
+   "trade": 15,
+   "pf_bersih": 0.7584,
+   "expectancy_r": -0.194,
+   "pnl_bersih": -59.9948
+  },
+  "vwap_reversi_pita": {
+   "trade": 13,
+   "pf_bersih": 1.0414,
+   "expectancy_r": 0.0024,
+   "pnl_bersih": 6.3396
+  },
+  "head_shoulders": {
+   "trade": 6,
+   "pf_bersih": 2.475,
+   "expectancy_r": 0.433,
+   "pnl_bersih": 63.1221
+  },
+  "double_bottom": {
+   "trade": 3,
+   "pf_bersih": Infinity,
+   "expectancy_r": 0.469,
+   "pnl_bersih": 33.1098
+  },
+  "rsi_divergence": {
+   "trade": 2,
+   "pf_bersih": 1.0086,
+   "expectancy_r": 0.0081,
+   "pnl_bersih": 0.1734
+  },
+  "wedge_breakout": {
+   "trade": 2,
+   "pf_bersih": 0.8861,
+   "expectancy_r": -0.1177,
+   "pnl_bersih": -2.3771
+  },
+  "keltner_reversi": {
+   "trade": 2,
+   "pf_bersih": Infinity,
+   "expectancy_r": 0.1996,
+   "pnl_bersih": 8.8296
+  },
+  "double_top": {
+   "trade": 1,
+   "pf_bersih": Infinity,
+   "expectancy_r": 0.4297,
+   "pnl_bersih": 9.6444
+  }
+ }
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/bt95/analisa_single_4h_final_bar_per_hari.json
+rc=0
