@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/home/runner/work/uji-trading/uji-trading/klon_modul/scripts/ab95.py", line 744, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/uji-trading/uji-trading/klon_modul/scripts/ab95.py", line 738, in main
+    return cmd_inventaris()
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/uji-trading/uji-trading/klon_modul/scripts/ab95.py", line 354, in cmd_inventaris
+    tulis(out, "inventaris")
+  File "/home/runner/work/uji-trading/uji-trading/klon_modul/scripts/ab95.py", line 724, in tulis
+    json.dump(out, fh, indent=1, ensure_ascii=False)
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+rc=1
