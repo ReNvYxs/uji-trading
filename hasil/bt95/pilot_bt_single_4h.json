@@ -14,7 +14,7 @@
  "simbol_tersedia": 8,
  "simbol_diproses": 8,
  "simbol_gagal": {},
- "detik": 8.7,
+ "detik": 8.3,
  "total": {
   "trade": 170,
   "menang": 80,
@@ -335,7 +335,7 @@
    "max_drawdown_usd": 134.7775,
    "sampel_cukup": false,
    "bar": 222,
-   "detik": 1.9
+   "detik": 1.8
   },
   "1000PEPE": {
    "trade": 15,
@@ -386,7 +386,7 @@
    "max_drawdown_usd": 119.1521,
    "sampel_cukup": false,
    "bar": 161,
-   "detik": 1.6
+   "detik": 1.5
   },
   "ADA": {
    "trade": 33,
@@ -437,7 +437,7 @@
    "max_drawdown_usd": 277.3524,
    "sampel_cukup": false,
    "bar": 93,
-   "detik": 0.7
+   "detik": 0.6
   },
   "ARPA": {
    "trade": 16,
@@ -454,7 +454,7 @@
    "max_drawdown_usd": 87.3784,
    "sampel_cukup": false,
    "bar": 117,
-   "detik": 1.2
+   "detik": 1.1
   }
  }
 }
