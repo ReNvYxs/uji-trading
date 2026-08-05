@@ -10,7 +10,7 @@ permissions:
   contents: write
 concurrency:
   group: bt95
-  cancel-in-progress: false
+  cancel-in-progress: true
 env:
   MODUL_REPO: EnVyxS/lux-modul-trading
   MODUL_REF: 8401b2327736a4cc5c588d211eb6911dde0842da
@@ -18,6 +18,7 @@ env:
   ASET_ID: '502033995'
   ASET_SHA256: 79f906caaf9933d518c319821b77317e57ef15e00a30f849220024b8c6c1bff5
   GIT_TERMINAL_PROMPT: '0'
+  AB95_PATH: klon_modul/scripts/ab95.py
 jobs:
   pilot:
     runs-on: ubuntu-latest
@@ -46,10 +47,17 @@ jobs:
           LUX_MAKS_SIMBOL: '0'
           LUX_BATAS_DETIK: '1800'
           LUX_KELUARAN: hasil/bt95/inventaris_dataset.json
+          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_inventaris.json
         run: |
           set +e
-          python3 klon_modul/scripts/ab95.py inventaris 2>&1 | tee hasil/bt95/log_inventaris.txt
+          python3 alat/jalankan_ab95.py inventaris 2>&1 | tee hasil/bt95/log_inventaris.txt
           echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_inventaris.txt
+      - name: reduksi inventaris
+        continue-on-error: true
+        run: |
+          set +e
+          python3 alat/ringkas_inventaris.py 2>&1 | tee hasil/bt95/log_ringkas_inventaris.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_ringkas_inventaris.txt
       - name: rekam inventaris
         if: always()
         run: bash alat/rekam.sh "inventaris dataset"
@@ -63,9 +71,10 @@ jobs:
           LUX_SAMPEL: '25'
           LUX_BATAS_DETIK: '900'
           LUX_KELUARAN: hasil/bt95/pilot_integritas_single_15m.json
+          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_integritas_single_15m.json
         run: |
           set +e
-          python3 klon_modul/scripts/ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_15m.txt
+          python3 alat/jalankan_ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_15m.txt
           echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_integritas_single_15m.txt
       - name: rekam integritas 15m
         if: always()
@@ -80,9 +89,10 @@ jobs:
           LUX_SAMPEL: '25'
           LUX_BATAS_DETIK: '900'
           LUX_KELUARAN: hasil/bt95/pilot_integritas_single_4h.json
+          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_integritas_single_4h.json
         run: |
           set +e
-          python3 klon_modul/scripts/ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_4h.txt
+          python3 alat/jalankan_ab95.py integritas 2>&1 | tee hasil/bt95/log_integritas_single_4h.txt
           echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_integritas_single_4h.txt
       - name: rekam integritas 4h
         if: always()
@@ -97,9 +107,10 @@ jobs:
           LUX_MAKS_BAR: '3000'
           LUX_BATAS_DETIK: '1500'
           LUX_KELUARAN: hasil/bt95/pilot_bt_single_15m.json
+          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_bt_single_15m.json
         run: |
           set +e
-          python3 klon_modul/scripts/ab95.py backtest 2>&1 | tee hasil/bt95/log_bt_single_15m.txt
+          python3 alat/jalankan_ab95.py backtest 2>&1 | tee hasil/bt95/log_bt_single_15m.txt
           echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_bt_single_15m.txt
       - name: rekam bt 15m
         if: always()
@@ -114,9 +125,10 @@ jobs:
           LUX_MAKS_BAR: '3000'
           LUX_BATAS_DETIK: '1500'
           LUX_KELUARAN: hasil/bt95/pilot_bt_single_4h.json
+          AB95_JEJAK_KONVERSI: hasil/bt95/konversi_bt_single_4h.json
         run: |
           set +e
-          python3 klon_modul/scripts/ab95.py backtest 2>&1 | tee hasil/bt95/log_bt_single_4h.txt
+          python3 alat/jalankan_ab95.py backtest 2>&1 | tee hasil/bt95/log_bt_single_4h.txt
           echo "rc=${PIPESTATUS[0]}" | tee -a hasil/bt95/log_bt_single_4h.txt
       - name: rekam bt 4h
         if: always()
@@ -136,7 +148,7 @@ jobs:
           for p in sorted(glob.glob("hasil/bt95/*.json")):
               nama = os.path.basename(p)
               try:
-                  with open(p) as f:
+                  with open(p, encoding="utf-8") as f:
                       d = json.load(f)
                   ring["berkas"][nama] = {
                       "ok": True,
@@ -147,9 +159,9 @@ jobs:
                   ring["berkas"][nama] = {"ok": False, "galat": str(e)[:200]}
           ring["hilang"] = [n for n in wajib if not os.path.exists("hasil/bt95/" + n)]
           ring["pilot_lengkap"] = not ring["hilang"]
-          with open("hasil/bt95/RINGKASAN_PILOT.json", "w") as f:
-              json.dump(ring, f, indent=1, sort_keys=True)
-          print(json.dumps(ring, indent=1)[:3000])
+          with open("hasil/bt95/RINGKASAN_PILOT.json", "w", encoding="utf-8") as f:
+              json.dump(ring, f, indent=1, sort_keys=True, ensure_ascii=False)
+          print(json.dumps(ring, indent=1, ensure_ascii=False)[:3000])
           PY
       - name: rekam ringkasan
         if: always()
