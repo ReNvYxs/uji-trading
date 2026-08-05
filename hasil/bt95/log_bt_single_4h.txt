@@ -1,13 +1,13 @@
 {"varian": {"varian": "asli", "diterapkan": false}}
 konfig=single_4h entry_tf=4h ctx=() simbol=8 maks_bar=3000
-[1/8] 1000BONK trade=30 pnl=223.8048 (1.8s)
+[1/8] 1000BONK trade=30 pnl=223.8048 (1.9s)
 [2/8] 1000PEPE trade=15 pnl=-7.2121 (0.8s)
 [3/8] 1000SHIB trade=20 pnl=21.972 (1.2s)
-[4/8] AAVE trade=21 pnl=21.5352 (1.5s)
+[4/8] AAVE trade=21 pnl=21.5352 (1.6s)
 [5/8] ADA trade=33 pnl=-14.6469 (1.1s)
 [6/8] AIGENSYN trade=8 pnl=40.2821 (0.2s)
-[7/8] ALLO trade=27 pnl=-94.0557 (0.6s)
-[8/8] ARPA trade=16 pnl=16.7534 (1.1s)
+[7/8] ALLO trade=27 pnl=-94.0557 (0.7s)
+[8/8] ARPA trade=16 pnl=16.7534 (1.2s)
 {
  "perintah": "backtest",
  "varian": {
@@ -24,7 +24,7 @@ konfig=single_4h entry_tf=4h ctx=() simbol=8 maks_bar=3000
  "simbol_tersedia": 8,
  "simbol_diproses": 8,
  "simbol_gagal": {},
- "detik": 8.3,
+ "detik": 8.6,
  "total": {
   "trade": 170,
   "menang": 80,
