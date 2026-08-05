@@ -1,0 +1,11 @@
+{
+ "berkas": {},
+ "hilang": [
+  "inventaris_dataset.json",
+  "pilot_integritas_single_15m.json",
+  "pilot_integritas_single_4h.json",
+  "pilot_bt_single_15m.json",
+  "pilot_bt_single_4h.json"
+ ],
+ "pilot_lengkap": false
+}
