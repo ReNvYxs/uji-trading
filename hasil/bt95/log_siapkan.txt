@@ -1,4 +1,4 @@
-utc_mulai=2026-08-05T07:45:58Z
+utc_mulai=2026-08-05T07:48:02Z
 modul_repo=EnVyxS/lux-modul-trading
 modul_ref=8401b2327736a4cc5c588d211eb6911dde0842da
 dataset_repo=EnVyxS/uji-trading
@@ -19,4 +19,15 @@ data_upload/币安人生_4h.csv:  mismatching "local" filename (data_upload/х�
          continuing with "central" filename version
 data_upload/币安人生_5m.csv:  mismatching "local" filename (data_upload/х╕БхоЙф║║чФЯ_5m.csv),
          continuing with "central" filename version
-GAGAL: ekstrak zip gagal
+unzip_rc=1
+data_dir=dataset/ekstrak/data_upload
+jumlah_csv_total=476
+jumlah_csv_5m=95
+jumlah_csv_15m=95
+jumlah_csv_1h=95
+jumlah_csv_4h=95
+jumlah_csv_1d=95
+jumlah_berkas_nonascii=5
+byte_dataset_terekstrak=328005072
+utc_selesai=2026-08-05T07:48:05Z
+siapkan=OK
