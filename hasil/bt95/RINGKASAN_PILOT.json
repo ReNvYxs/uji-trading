@@ -1,7 +1,7 @@
 {
  "berkas": {
   "RINGKASAN_PILOT.json": {
-   "byte": 3085,
+   "byte": 3332,
    "kunci": [
     "berkas",
     "hilang",
@@ -174,7 +174,7 @@
    "ok": true
   },
   "probe_kandidat.json": {
-   "byte": 3231,
+   "byte": 2655,
    "kunci": [
     "ab95",
     "backtester",
@@ -183,7 +183,8 @@
     "kesimpulan",
     "konfig",
     "maks_bar",
-    "pipeline",
+    "pipeline_internal_backtester",
+    "pipeline_terpisah",
     "simbol_diuji",
     "simbol_tersedia"
    ],
