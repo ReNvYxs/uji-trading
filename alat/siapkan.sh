@@ -69,7 +69,13 @@ echo "dataset_sha256=$SHA" >> "$LOG"
 
 rm -rf dataset
 mkdir -p dataset/ekstrak
-unzip -q -o 95pair.zip -d dataset/ekstrak >> "$LOG" 2>&1 || gagal "ekstrak zip gagal" 8
+# unzip rc=1 berarti PERINGATAN (mis. nama berkas non-ASCII), bukan kegagalan.
+# Gate sebenarnya adalah keberadaan CSV, bukan status keluar unzip.
+unzip -q -o 95pair.zip -d dataset/ekstrak >> "$LOG" 2>&1
+RC_UNZIP=$?
+echo "unzip_rc=$RC_UNZIP" >> "$LOG"
+[ "$RC_UNZIP" -le 1 ] || gagal "ekstrak zip gagal keras (rc=$RC_UNZIP)" 8
+
 CONTOH=$(find dataset/ekstrak -name '*_4h.csv' -print -quit)
 [ -n "$CONTOH" ] || gagal "tidak menemukan *_4h.csv setelah ekstrak" 9
 DATA_DIR=$(dirname "$CONTOH")
@@ -79,6 +85,11 @@ for tf in 5m 15m 1h 4h 1d; do
   echo "jumlah_csv_$tf=$(find "$DATA_DIR" -name "*_$tf.csv" | wc -l)" >> "$LOG"
 done
 find "$DATA_DIR" -name '*_4h.csv' -printf '%f\n' | sort > hasil/bt95/daftar_simbol_4h.txt
+
+# Higiene data: catat simbol dengan nama berkas non-ASCII (bukan simbol Binance wajar)
+find "$DATA_DIR" -name '*.csv' -printf '%f\n' | LC_ALL=C grep '[^ -~]' | sort > hasil/bt95/berkas_nonascii.txt || true
+echo "jumlah_berkas_nonascii=$(wc -l < hasil/bt95/berkas_nonascii.txt)" >> "$LOG"
+echo "byte_dataset_terekstrak=$(du -sb "$DATA_DIR" | cut -f1)" >> "$LOG"
 
 {
   echo "LUX_AKAR=klon_modul"
