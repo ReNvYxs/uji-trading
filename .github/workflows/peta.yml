@@ -29,18 +29,39 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: detak awal
+        run: |
+          mkdir -p hasil/peta
+          echo "detak=MULAI" > hasil/peta/DETAK.txt
+          date -u +"mulai_utc=%Y-%m-%dT%H:%M:%SZ" >> hasil/peta/DETAK.txt
+          echo "commit=${GITHUB_SHA}" >> hasil/peta/DETAK.txt
+          echo "runner=$(uname -s)" >> hasil/peta/DETAK.txt
+          echo "cpu=$(nproc)" >> hasil/peta/DETAK.txt
+          cat hasil/peta/DETAK.txt
+      - name: rekam detak
+        if: always()
+        run: bash alat/rekam.sh "peta detak awal"
+
       - name: siapkan bahan uji
         run: |
-          bash alat/siapkan.sh
           mkdir -p hasil/peta
+          set +e
+          bash alat/siapkan.sh 2>&1 | tee hasil/peta/log_siapkan.txt
+          RC=${PIPESTATUS[0]}
+          echo "rc_siapkan=$RC" | tee -a hasil/peta/log_siapkan.txt
+          exit $RC
+      - name: rekam siapkan
+        if: always()
+        run: bash alat/rekam.sh "peta siapkan"
+
       - name: dependensi modul
         run: |
           python -m pip install --quiet --upgrade pip
           python -m pip install --quiet -r klon_modul/requirements.txt
           python -c "import numpy,pandas,pyarrow,yaml;print('dep OK')" | tee hasil/peta/log_dependensi.txt
-      - name: rekam siapkan
+      - name: rekam dependensi
         if: always()
-        run: bash alat/rekam.sh "peta: siapkan"
+        run: bash alat/rekam.sh "peta dependensi"
 
       - name: peta multi_4h_ctx1d
         continue-on-error: true

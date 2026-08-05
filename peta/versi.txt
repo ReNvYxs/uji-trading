@@ -1,0 +1,6 @@
+peta v2
+tambahan: langkah 'detak awal' commit DETAK.txt dalam ~30 detik sejak job mulai,
+serta 'siapkan' kini menulis log_siapkan.txt dan rc-nya walau gagal.
+alasan: run v1 (f9e58ad7) tidak menghasilkan satu pun commit selama >80 menit,
+padahal rekam pertama semestinya terjadi ~6 menit setelah job mulai. Tanpa detak,
+'workflow tidak pernah jalan' dan 'job mati di setup' tidak bisa dibedakan dari luar.
