@@ -1,11 +1,109 @@
 {
- "berkas": {},
- "hilang": [
-  "inventaris_dataset.json",
-  "pilot_integritas_single_15m.json",
-  "pilot_integritas_single_4h.json",
-  "pilot_bt_single_15m.json",
-  "pilot_bt_single_4h.json"
- ],
- "pilot_lengkap": false
+ "berkas": {
+  "RINGKASAN_PILOT.json": {
+   "byte": 221,
+   "kunci": [
+    "berkas",
+    "hilang",
+    "pilot_lengkap"
+   ],
+   "ok": true
+  },
+  "inventaris_dataset.json": {
+   "galat": "Expecting value: line 156 column 15 (char 1878)",
+   "ok": false
+  },
+  "pilot_bt_single_15m.json": {
+   "byte": 12984,
+   "kunci": [
+    "alasan_keluar",
+    "breadth_pair_profit",
+    "context_tfs",
+    "detik",
+    "entry_tf",
+    "kandidat_per_strategi",
+    "konfig",
+    "maks_bar",
+    "metodologi",
+    "modal_awal_per_simbol",
+    "pair_dengan_trade",
+    "pair_profit",
+    "per_arah",
+    "per_kelompok",
+    "per_simbol",
+    "per_strategi",
+    "perintah",
+    "saring_biaya",
+    "simbol_diproses",
+    "simbol_gagal",
+    "simbol_tersedia",
+    "total",
+    "varian"
+   ],
+   "ok": true
+  },
+  "pilot_bt_single_4h.json": {
+   "byte": 11047,
+   "kunci": [
+    "alasan_keluar",
+    "breadth_pair_profit",
+    "context_tfs",
+    "detik",
+    "entry_tf",
+    "kandidat_per_strategi",
+    "konfig",
+    "maks_bar",
+    "metodologi",
+    "modal_awal_per_simbol",
+    "pair_dengan_trade",
+    "pair_profit",
+    "per_arah",
+    "per_kelompok",
+    "per_simbol",
+    "per_strategi",
+    "perintah",
+    "saring_biaya",
+    "simbol_diproses",
+    "simbol_gagal",
+    "simbol_tersedia",
+    "total",
+    "varian"
+   ],
+   "ok": true
+  },
+  "pilot_integritas_single_15m.json": {
+   "byte": 814,
+   "kunci": [
+    "detik",
+    "jumlah_strategi_registry",
+    "konfig",
+    "lulus",
+    "maks_bar",
+    "per_simbol",
+    "perintah",
+    "simbol_gagal",
+    "uji",
+    "varian"
+   ],
+   "ok": true
+  },
+  "pilot_integritas_single_4h.json": {
+   "byte": 813,
+   "kunci": [
+    "detik",
+    "jumlah_strategi_registry",
+    "konfig",
+    "lulus",
+    "maks_bar",
+    "per_simbol",
+    "perintah",
+    "simbol_gagal",
+    "uji",
+    "varian"
+   ],
+   "ok": true
+  }
+ },
+ "hilang": [],
+ "pilot_lengkap": true
 }
