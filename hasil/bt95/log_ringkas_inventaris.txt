@@ -1,0 +1,115 @@
+{
+ "berkas_mentah": "hasil/bt95/inventaris_dataset.json",
+ "byte_mentah": 125579,
+ "kunci_tingkat_atas": [
+  "berkas_bermasalah",
+  "berkas_diperiksa",
+  "data_dir",
+  "detik",
+  "jumlah_berkas_bermasalah",
+  "jumlah_berkas_csv",
+  "jumlah_simbol",
+  "lulus",
+  "per_tf",
+  "perintah",
+  "rinci",
+  "simbol",
+  "terpotong_batas_waktu",
+  "tf_tersedia"
+ ],
+ "jumlah_entri_berkas": 480,
+ "bendera": {
+  "duplikat_ts": {
+   "jumlah_berkas_kena": 0,
+   "total": 0,
+   "terburuk": []
+  },
+  "ts_menurun": {
+   "jumlah_berkas_kena": 0,
+   "total": 0,
+   "terburuk": []
+  },
+  "celah": {
+   "jumlah_berkas_kena": 0,
+   "total": 0,
+   "terburuk": []
+  },
+  "bar_hilang": {
+   "jumlah_berkas_kena": 0,
+   "total": 0,
+   "terburuk": []
+  },
+  "nilai_tidak_hingga": {
+   "jumlah_berkas_kena": 0,
+   "total": 0,
+   "terburuk": []
+  },
+  "ohlc_rusak": {
+   "jumlah_berkas_kena": 0,
+   "total": 0,
+   "terburuk": []
+  },
+  "volume_nol": {
+   "jumlah_berkas_kena": 12,
+   "total": 262,
+   "terburuk": [
+    [
+     "rinci/CRCL_5m.csv",
+     101
+    ],
+    [
+     "rinci/MU_5m.csv",
+     71
+    ],
+    [
+     "rinci/SNDK_5m.csv",
+     46
+    ],
+    [
+     "rinci/MSTR_5m.csv",
+     15
+    ],
+    [
+     "rinci/SOXL_5m.csv",
+     14
+    ],
+    [
+     "rinci/SPCX_5m.csv",
+     7
+    ],
+    [
+     "rinci/HOT_5m.csv",
+     3
+    ],
+    [
+     "rinci/CRCL_15m.csv",
+     1
+    ],
+    [
+     "rinci/MU_15m.csv",
+     1
+    ],
+    [
+     "rinci/RIF_5m.csv",
+     1
+    ]
+   ]
+  }
+ },
+ "bar": {
+  "min": 4,
+  "median": 4320,
+  "maks": 4287258,
+  "total": 12355768,
+  "n": 480
+ },
+ "hari": {
+  "min": 3.0,
+  "median": 179.83,
+  "maks": 180.0,
+  "total": 74336.3299999999,
+  "n": 475
+ },
+ "bersih": false
+}
+rc=0

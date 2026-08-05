@@ -1,0 +1,114 @@
+{
+ "bar": {
+  "maks": 4287258,
+  "median": 4320,
+  "min": 4,
+  "n": 480,
+  "total": 12355768
+ },
+ "bendera": {
+  "bar_hilang": {
+   "jumlah_berkas_kena": 0,
+   "terburuk": [],
+   "total": 0
+  },
+  "celah": {
+   "jumlah_berkas_kena": 0,
+   "terburuk": [],
+   "total": 0
+  },
+  "duplikat_ts": {
+   "jumlah_berkas_kena": 0,
+   "terburuk": [],
+   "total": 0
+  },
+  "nilai_tidak_hingga": {
+   "jumlah_berkas_kena": 0,
+   "terburuk": [],
+   "total": 0
+  },
+  "ohlc_rusak": {
+   "jumlah_berkas_kena": 0,
+   "terburuk": [],
+   "total": 0
+  },
+  "ts_menurun": {
+   "jumlah_berkas_kena": 0,
+   "terburuk": [],
+   "total": 0
+  },
+  "volume_nol": {
+   "jumlah_berkas_kena": 12,
+   "terburuk": [
+    [
+     "rinci/CRCL_5m.csv",
+     101
+    ],
+    [
+     "rinci/MU_5m.csv",
+     71
+    ],
+    [
+     "rinci/SNDK_5m.csv",
+     46
+    ],
+    [
+     "rinci/MSTR_5m.csv",
+     15
+    ],
+    [
+     "rinci/SOXL_5m.csv",
+     14
+    ],
+    [
+     "rinci/SPCX_5m.csv",
+     7
+    ],
+    [
+     "rinci/HOT_5m.csv",
+     3
+    ],
+    [
+     "rinci/CRCL_15m.csv",
+     1
+    ],
+    [
+     "rinci/MU_15m.csv",
+     1
+    ],
+    [
+     "rinci/RIF_5m.csv",
+     1
+    ]
+   ],
+   "total": 262
+  }
+ },
+ "berkas_mentah": "hasil/bt95/inventaris_dataset.json",
+ "bersih": false,
+ "byte_mentah": 125579,
+ "hari": {
+  "maks": 180.0,
+  "median": 179.83,
+  "min": 3.0,
+  "n": 475,
+  "total": 74336.3299999999
+ },
+ "jumlah_entri_berkas": 480,
+ "kunci_tingkat_atas": [
+  "berkas_bermasalah",
+  "berkas_diperiksa",
+  "data_dir",
+  "detik",
+  "jumlah_berkas_bermasalah",
+  "jumlah_berkas_csv",
+  "jumlah_simbol",
+  "lulus",
+  "per_tf",
+  "perintah",
+  "rinci",
+  "simbol",
+  "terpotong_batas_waktu",
+  "tf_tersedia"
+ ]
+}

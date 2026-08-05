@@ -1,28 +1,58 @@
-Traceback (most recent call last):
-  File "/home/runner/work/uji-trading/uji-trading/klon_modul/scripts/ab95.py", line 744, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/uji-trading/uji-trading/klon_modul/scripts/ab95.py", line 738, in main
-    return cmd_inventaris()
-           ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/uji-trading/uji-trading/klon_modul/scripts/ab95.py", line 354, in cmd_inventaris
-    tulis(out, "inventaris")
-  File "/home/runner/work/uji-trading/uji-trading/klon_modul/scripts/ab95.py", line 724, in tulis
-    json.dump(out, fh, indent=1, ensure_ascii=False)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 179, in dump
-    for chunk in iterable:
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 432, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
-    yield from chunks
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
-    yield from chunks
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
-    yield from chunks
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 439, in _iterencode
-    o = _default(o)
-        ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/encoder.py", line 180, in default
-    raise TypeError(f'Object of type {o.__class__.__name__} '
-TypeError: Object of type int64 is not JSON serializable
-rc=1
+{
+ "perintah": "inventaris",
+ "data_dir": "dataset/ekstrak/data_upload",
+ "jumlah_berkas_csv": 475,
+ "berkas_diperiksa": 475,
+ "terpotong_batas_waktu": false,
+ "jumlah_simbol": 95,
+ "tf_tersedia": [
+  "15m",
+  "1d",
+  "1h",
+  "4h",
+  "5m"
+ ],
+ "per_tf": {
+  "15m": {
+   "berkas": 95,
+   "bar": 1429094,
+   "bar_min": 315,
+   "bar_maks": 17280,
+   "celah": 0
+  },
+  "1d": {
+   "berkas": 95,
+   "bar": 14903,
+   "bar_min": 4,
+   "bar_maks": 180,
+   "celah": 0
+  },
+  "1h": {
+   "berkas": 95,
+   "bar": 357293,
+   "bar_min": 79,
+   "bar_maks": 4321,
+   "celah": 0
+  },
+  "4h": {
+   "berkas": 95,
+   "bar": 89336,
+   "bar_min": 20,
+   "bar_maks": 1080,
+   "celah": 0
+  },
+  "5m": {
+   "berkas": 95,
+   "bar": 4287258,
+   "bar_min": 943,
+   "bar_maks": 51841,
+   "celah": 0
+  }
+ },
+ "jumlah_berkas_bermasalah": 0,
+ "berkas_bermasalah": [],
+ "lulus": true,
+ "detik": 33.5
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/bt95/inventaris_dataset.json
+rc=0
