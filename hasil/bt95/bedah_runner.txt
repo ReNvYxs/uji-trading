@@ -1,0 +1,137 @@
+berkas=klon_modul/scripts/ab95.py
+baris_total=744
+md5=40585970d6cb12c70b86349a1f9570ed
+
+=== 1) definisi tingkat atas (tanda tangan) ===
+38:def _env(nama, bawaan=""):
+42:def _env_int(nama, bawaan=0):
+62:KONFIG = {
+72:MODAL_AWAL = 1000.0
+76:def terapkan_varian():
+108:def _saring_kwargs(fungsi, kandidat):
+117:def muat_bars(simbol, tf):
+125:def iris(bars, a, b):
+138:def potong_akhir(bars, maks_bar):
+144:def muat_plane(simbol, tfs, maks_bar):
+152:def daftar_simbol(tfs):
+173:def buat_pipeline(plane, tfplan, saring):
+186:def buat_backtester(plane, tfplan, saring):
+199:def _bulat(x, n=4):
+207:def _pf(menang, kalah):
+213:def metrik(trades):
+250:def cmd_inventaris():
+361:def cmd_backtest():
+506:def _ringkas_verdict(h):
+514:def potong_plane(plane, tfs, i):
+537:def periksa_verdict(v, bars, i):
+597:def cmd_integritas():
+719:def tulis(out, nama_bawaan):
+731:def main():
+
+=== 2) semua kemunculan kandidat/menang per strategi ===
+412:        for k, v in (r.get("kandidat_per_strategi") or {}).items():
+414:        for k, v in (r.get("menang_per_strategi") or {}).items():
+487:        "kandidat_per_strategi": dict(sorted(kandidat_strategi.items())),
+
+=== 3) blok +-8 baris di sekitar kandidat_per_strategi ===
+404-            continue
+405-        diproses += 1
+406-        r = hasil.ringkas()
+407-        bar_total += r.get("bar_dievaluasi", 0)
+408-        tolak_biaya += r.get("entry_ditolak_biaya", 0)
+409-        batal_gap += r.get("entry_batal_gap", 0)
+410-        for k, v in (r.get("tolak_biaya_per_kode") or {}).items():
+411-            tolak_kode[k] += v
+412:        for k, v in (r.get("kandidat_per_strategi") or {}).items():
+413-            kandidat_strategi[k] += v
+414-        for k, v in (r.get("menang_per_strategi") or {}).items():
+415-            menang_strategi[k] += v
+416-        lokal = []
+417-        for t in hasil.trades:
+418-            rec = {
+419-                "simbol": simbol,
+420-                "strategy_id": t.strategy_id,
+--
+479-            "tiap simbol = akun terpisah modal sama; angka gabungan adalah agregat "
+480-            "statistik lintas simbol untuk mengukur edge, bukan kurva ekuitas satu akun"
+481-        ),
+482-        "simbol_tersedia": len(simbol_list),
+483-        "simbol_diproses": diproses,
+484-        "simbol_gagal": gagal,
+485-        "detik": round(time.time() - t0, 1),
+486-        "total": total,
+487:        "kandidat_per_strategi": dict(sorted(kandidat_strategi.items())),
+488-        "pair_dengan_trade": len(pair_trade),
+489-        "pair_profit": len(pair_profit),
+490-        "breadth_pair_profit": _bulat(
+491-            len(pair_profit) / len(pair_trade) if pair_trade else None
+492-        ),
+493-        "alasan_keluar": dict(sorted(alasan.items())),
+494-        "per_arah": kelompokkan("arah"),
+495-        "per_kelompok": kelompokkan("kelompok"),
+
+=== 4) cmd_backtest baris 361..506 (baris relevan saja) ===
+26:    kandidat_strategi = defaultdict(int)
+27:    menang_strategi = defaultdict(int)
+30:    for simbol in simbol_list:
+46:        r = hasil.ringkas()
+50:        for k, v in (r.get("tolak_biaya_per_kode") or {}).items():
+52:        for k, v in (r.get("kandidat_per_strategi") or {}).items():
+53:            kandidat_strategi[k] += v
+54:        for k, v in (r.get("menang_per_strategi") or {}).items():
+55:            menang_strategi[k] += v
+57:        for t in hasil.trades:
+70:            lokal.append(rec)
+71:            semua.append(rec)
+84:        for t in semua:
+85:            grup[t[kunci]].append(t)
+87:        for k, lst in sorted(grup.items(), key=lambda kv: -len(kv[1])):
+91:                m["kandidat"] = kandidat_strategi.get(k)
+92:                m["menang_arbiter"] = menang_strategi.get(k)
+97:    for t in semua:
+101:    total["bar_dievaluasi"] = bar_total
+102:    total["entry_ditolak_biaya"] = tolak_biaya
+103:    total["entry_batal_gap"] = batal_gap
+104:    total["tolak_biaya_per_kode"] = dict(sorted(tolak_kode.items()))
+106:    pair_profit = [s for s, m in per_simbol.items() if (m.get("pnl_bersih") or 0) > 0]
+107:    pair_trade = [s for s, m in per_simbol.items() if m.get("trade", 0) > 0]
+127:        "kandidat_per_strategi": dict(sorted(kandidat_strategi.items())),
+134:        "per_arah": kelompokkan("arah"),
+135:        "per_kelompok": kelompokkan("kelompok"),
+146:def _ringkas_verdict(h):
+
+=== 5) tanda tangan pembantu yang akan dipakai ulang ===
+144:def muat_plane(simbol, tfs, maks_bar):
+145-    peta = {}
+146-    for tf in tfs:
+147-        b = muat_bars(simbol, tf)
+--
+152:def daftar_simbol(tfs):
+153-    manual = [s.strip() for s in _env("LUX_SIMBOL").split(",") if s.strip()]
+154-    if manual:
+155-        kandidat = manual
+--
+173:def buat_pipeline(plane, tfplan, saring):
+174-    kw = _saring_kwargs(
+175-        Pipeline.__init__,
+176-        {
+--
+186:def buat_backtester(plane, tfplan, saring):
+187-    kw = _saring_kwargs(
+188-        Backtester.__init__,
+189-        {
+--
+213:def metrik(trades):
+214-    n = len(trades)
+215-    if n == 0:
+216-        return {"trade": 0}
+--
+514:def potong_plane(plane, tfs, i):
+515-    """Plane yang HANYA berisi bar sampai indeks i pada TF entry.
+516-
+517-    Bar konteks dipotong berdasarkan timestamp (bukan indeks) karena panjang
+--
+719:def tulis(out, nama_bawaan):
+720-    nama = _env("LUX_KELUARAN") or os.path.join("reports", "ab95", f"{nama_bawaan}.json")
+721-    jalur = nama if os.path.isabs(nama) else os.path.join(os.getcwd(), nama)
+722-    os.makedirs(os.path.dirname(jalur), exist_ok=True)
