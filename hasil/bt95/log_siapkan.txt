@@ -1,0 +1,22 @@
+utc_mulai=2026-08-05T07:45:58Z
+modul_repo=EnVyxS/lux-modul-trading
+modul_ref=8401b2327736a4cc5c588d211eb6911dde0842da
+dataset_repo=EnVyxS/uji-trading
+aset_id=502033995
+modul_head=8401b2327736a4cc5c588d211eb6911dde0842da
+modul_jumlah_py=48
+md5_runner_ab95=40585970d6cb12c70b86349a1f9570ed
+requirements=numpy==2.1.3 pandas==2.2.3 pyarrow==17.0.0 PyYAML==6.0.2 pytest==8.3.3 
+dataset_byte=91701505
+dataset_sha256=79f906caaf9933d518c319821b77317e57ef15e00a30f849220024b8c6c1bff5
+data_upload/币安人生_15m.csv:  mismatching "local" filename (data_upload/х╕БхоЙф║║чФЯ_15m.csv),
+         continuing with "central" filename version
+data_upload/币安人生_1d.csv:  mismatching "local" filename (data_upload/х╕БхоЙф║║чФЯ_1d.csv),
+         continuing with "central" filename version
+data_upload/币安人生_1h.csv:  mismatching "local" filename (data_upload/х╕БхоЙф║║чФЯ_1h.csv),
+         continuing with "central" filename version
+data_upload/币安人生_4h.csv:  mismatching "local" filename (data_upload/х╕БхоЙф║║чФЯ_4h.csv),
+         continuing with "central" filename version
+data_upload/币安人生_5m.csv:  mismatching "local" filename (data_upload/х╕БхоЙф║║чФЯ_5m.csv),
+         continuing with "central" filename version
+GAGAL: ekstrak zip gagal
