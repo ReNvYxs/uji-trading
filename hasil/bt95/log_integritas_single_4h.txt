@@ -1,8 +1,10 @@
-konfig=single_4h simbol=4 sampel=25 varian=asli
-1000BONK: bar=1080 indeks=25 entry=5
-1000PEPE: bar=1080 indeks=25 entry=8
-1000SHIB: bar=1080 indeks=25 entry=7
-AAVE: bar=1080 indeks=25 entry=4
+konfig=single_4h simbol=6 sampel=30 varian=asli
+1000BONK: bar=1080 indeks=30 entry=7
+1000PEPE: bar=1080 indeks=30 entry=9
+1000SHIB: bar=1080 indeks=30 entry=9
+AAVE: bar=1080 indeks=30 entry=6
+ADA: bar=1080 indeks=30 entry=8
+AIGENSYN: bar=403 indeks=30 entry=6
 {
  "perintah": "integritas",
  "varian": {
@@ -10,23 +12,23 @@ AAVE: bar=1080 indeks=25 entry=4
   "diterapkan": false
  },
  "konfig": "single_4h",
- "maks_bar": 2500,
+ "maks_bar": 1200,
  "jumlah_strategi_registry": 26,
- "detik": 2.7,
+ "detik": 4.5,
  "simbol_gagal": {},
  "uji": {
   "determinisme": {
-   "diperiksa": 100,
+   "diperiksa": 180,
    "beda": 0,
    "contoh": []
   },
   "anti_lookahead": {
-   "diperiksa": 100,
+   "diperiksa": 180,
    "beda": 0,
    "contoh": []
   },
   "sanitasi_verdict": {
-   "diperiksa": 24,
+   "diperiksa": 45,
    "pelanggaran": 0,
    "contoh": []
   }
