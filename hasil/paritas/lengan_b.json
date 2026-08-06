@@ -1,0 +1,1107 @@
+{
+ "ab95": "/tmp/klon_lux/scripts/ab95.py",
+ "akar": "/tmp/klon_lux",
+ "bar_tersedia": 89336,
+ "detik": 102.7,
+ "galat": [],
+ "inventaris": {
+  "__init__.py": "929eac696a0bf77d35c6387a699e7a45",
+  "arbiter/__init__.py": "2a513c353e88ab18c8409e31f34ef989",
+  "arbiter/pemilih.py": "d4932e79dad169c5d8d87b60e3451d6d",
+  "backtest.py": "3e0aefc51944975c250383a9cd7eae52",
+  "backtest_portofolio.py": "0376cf6dfc8f50f276e32fcc19d3244e",
+  "data/__init__.py": "699899a796254d083c099f15810d82e8",
+  "data/loader.py": "f34ab2261b97db188e4deb53fd6bef27",
+  "data/plane.py": "494dbed57c6e66443c28cff56029418e",
+  "data/resample.py": "f0d786922c8a3d4850add26530cd935f",
+  "eksekusi/__init__.py": "4420e1fc6e707a9de6ef68ecb606e581",
+  "eksekusi/biaya.py": "ecab70cd0f83173d2329724a0cdd3618",
+  "eksekusi/binance_client.py": "6c5bf57e2a2a201fed445060829234cb",
+  "eksekusi/ice_breaker.py": "ea5aa8b7aa0c5bcc0de8ace5f495d960",
+  "eksekusi/kredensial.py": "78ffb1749d32ff6e1014abc31c507b91",
+  "eksekusi/mode.py": "f5ab00c45c7211bba3d80856f1a54d4f",
+  "eksekusi/order.py": "32aee520dbded872af321bb1d24a5871",
+  "eksekusi/risiko.py": "56f6638721038313277eb7959069ba54",
+  "eksekusi/spesifikasi.py": "ada126f97bb727601a6d058f1ecb431a",
+  "eksekusi_aman/__init__.py": "2ab0cf67a7c660ddfafade6df2e8e0b8",
+  "eksekusi_aman/inti.py": "2d491d8c19dd363c988d04e71ae6f6ef",
+  "eksekusi_aman/proteksi.py": "745d9fdf2a7f09736cf6b3bd50250c2c",
+  "fitur/__init__.py": "4ed878c23052242501a34304d91313de",
+  "fitur/dasar.py": "0ac34f9938ed2197f53a3e23f2f4641f",
+  "fitur/lanjutan.py": "7a5ae60f449c21ecff424f674cfc1c1c",
+  "fitur/store.py": "2059f4b64f80ffb6f113f360d8bc77fa",
+  "fitur/struktur.py": "f4867fc0dc056cf32bac620c72e5418d",
+  "governor.py": "a498c8a23dd7b79412d3d84f06d5c7f3",
+  "konfigurasi.py": "380939f3ecaa724bd40d0f4e2989203b",
+  "kontrak.py": "ac5e85d42750c414bf602ddcc79e28d6",
+  "live_runner.py": "78fa69246015f964e30c176c02f057bc",
+  "mesin_multi.py": "a2be9b746582ee2a76fb9cd10d466047",
+  "notifikasi/__init__.py": "632f8b055d21b87d0928ec60677aca26",
+  "notifikasi/telegram.py": "dd2c94d710b9362660d7a10045d9d9f1",
+  "pemindai/__init__.py": "ffe5070bdfb82d8c317ec9b85bad5a9f",
+  "pemindai/likuiditas.py": "4740a6c00006dac32e25b3474203e4d7",
+  "pipeline.py": "f4b0f7a0c913ce311cc6c07af96e2b21",
+  "plugin.py": "066eb1dda6a5d7078fb8f19c67028610",
+  "portofolio.py": "36d3aa808a169486c3e2980e006b8c98",
+  "rencana_tf.py": "8a6c5282b9e9c7c309ce4dc8fe77a2ce",
+  "sintetis.py": "ad638ef0d44a37477083b0b855f1a8a8",
+  "strategi/__init__.py": "4ea6fe25e192927aa3b23bf319b689f2",
+  "strategi/adaptor.py": "680aca1af9f34020a1fbd4e50d932513",
+  "strategi/aliran_volume.py": "54211927ab4c4eb1e1c2df702685d0b0",
+  "strategi/basis.py": "df515de2ce0f8d1492a7e278c97d4f09",
+  "strategi/indikator.py": "418afdc0e452d8118c3c2a24fb7d615a",
+  "strategi/level_harga.py": "cde08c64f851b882ec84c9709d845b00",
+  "strategi/pola.py": "57f2cc0c014fd2a66b101b9701d0d6a6",
+  "strategi/struktur_modern.py": "61d66085f6bff2d468aa41e1890635e9",
+  "strategi/struktur_plus.py": "6591b2e627799387d5ca3b6f59e7b867",
+  "strategi/util.py": "33d1c229cadc6e08f635bb8972b2fdb9",
+  "strategi/volatilitas.py": "75f47bb39cc49618df34f4fe08ed8024"
+ },
+ "jumlah_berkas_py": 51,
+ "label": "b_lux_trading",
+ "lux_modul_file": "/tmp/klon_lux/lux_modul/__init__.py",
+ "maks_bar": 1200,
+ "mesin": {
+  "bar_dievaluasi": 11550,
+  "entry_batal_gap": 0,
+  "entry_ditolak_biaya": 8,
+  "entry_ditolak_sizing": 0,
+  "jumlah_trade": 2092,
+  "kalah": 1187,
+  "menang": 905
+ },
+ "modal_awal": 1000.0,
+ "per_simbol": {
+  "1000BONK": {
+   "biaya": 11.25078,
+   "menang": 16,
+   "pf_bersih": 1.726594,
+   "pnl_bersih": 223.80477,
+   "pnl_kotor": 235.05555,
+   "trade": 30
+  },
+  "1000PEPE": {
+   "biaya": 5.531924,
+   "menang": 9,
+   "pf_bersih": 0.947076,
+   "pnl_bersih": -7.212068,
+   "pnl_kotor": -1.680144,
+   "trade": 15
+  },
+  "1000SHIB": {
+   "biaya": 12.81848,
+   "menang": 8,
+   "pf_bersih": 1.081845,
+   "pnl_bersih": 21.971968,
+   "pnl_kotor": 34.790449,
+   "trade": 20
+  },
+  "AAVE": {
+   "biaya": 6.69009,
+   "menang": 10,
+   "pf_bersih": 1.090826,
+   "pnl_bersih": 21.535185,
+   "pnl_kotor": 28.225275,
+   "trade": 21
+  },
+  "ADA": {
+   "biaya": 18.184222,
+   "menang": 14,
+   "pf_bersih": 0.96532,
+   "pnl_bersih": -14.6469,
+   "pnl_kotor": 3.537323,
+   "trade": 33
+  },
+  "AIGENSYN": {
+   "biaya": 1.89008,
+   "menang": 4,
+   "pf_bersih": 1.475112,
+   "pnl_bersih": 40.2821,
+   "pnl_kotor": 42.172179,
+   "trade": 8
+  },
+  "ALLO": {
+   "biaya": 8.951479,
+   "menang": 12,
+   "pf_bersih": 0.720101,
+   "pnl_bersih": -94.055739,
+   "pnl_kotor": -85.104259,
+   "trade": 27
+  },
+  "ARPA": {
+   "biaya": 5.448519,
+   "menang": 7,
+   "pf_bersih": 1.085015,
+   "pnl_bersih": 16.753409,
+   "pnl_kotor": 22.201929,
+   "trade": 16
+  },
+  "ARX": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "ASTER": {
+   "biaya": 1.897671,
+   "menang": 4,
+   "pf_bersih": 2.05976,
+   "pnl_bersih": 79.719184,
+   "pnl_kotor": 81.616855,
+   "trade": 8
+  },
+  "AVAX": {
+   "biaya": 18.515978,
+   "menang": 15,
+   "pf_bersih": 0.745241,
+   "pnl_bersih": -124.106788,
+   "pnl_kotor": -105.59081,
+   "trade": 37
+  },
+  "BAS": {
+   "biaya": 3.993968,
+   "menang": 13,
+   "pf_bersih": 0.997377,
+   "pnl_bersih": -1.031438,
+   "pnl_kotor": 2.96253,
+   "trade": 31
+  },
+  "BCH": {
+   "biaya": 11.49187,
+   "menang": 11,
+   "pf_bersih": 1.06849,
+   "pnl_bersih": 17.872238,
+   "pnl_kotor": 29.364108,
+   "trade": 23
+  },
+  "BEAT": {
+   "biaya": 4.052427,
+   "menang": 13,
+   "pf_bersih": 1.122351,
+   "pnl_bersih": 46.747056,
+   "pnl_kotor": 50.799483,
+   "trade": 30
+  },
+  "BIRB": {
+   "biaya": 7.836219,
+   "menang": 11,
+   "pf_bersih": 0.924514,
+   "pnl_bersih": -22.464887,
+   "pnl_kotor": -14.628668,
+   "trade": 24
+  },
+  "BNB": {
+   "biaya": 29.237905,
+   "menang": 12,
+   "pf_bersih": 0.429888,
+   "pnl_bersih": -343.67811,
+   "pnl_kotor": -314.440204,
+   "trade": 41
+  },
+  "BREV": {
+   "biaya": 12.719478,
+   "menang": 23,
+   "pf_bersih": 1.739773,
+   "pnl_bersih": 257.25184,
+   "pnl_kotor": 269.971317,
+   "trade": 39
+  },
+  "BTC": {
+   "biaya": 15.407426,
+   "menang": 12,
+   "pf_bersih": 1.391834,
+   "pnl_bersih": 106.000019,
+   "pnl_kotor": 121.407445,
+   "trade": 24
+  },
+  "BTW": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "CAP": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "CL": {
+   "biaya": 4.342886,
+   "menang": 8,
+   "pf_bersih": 5.736887,
+   "pnl_bersih": 210.603155,
+   "pnl_kotor": 214.946042,
+   "trade": 10
+  },
+  "CRCL": {
+   "biaya": 9.771524,
+   "menang": 13,
+   "pf_bersih": 1.303844,
+   "pnl_bersih": 78.698122,
+   "pnl_kotor": 88.469646,
+   "trade": 25
+  },
+  "DOGE": {
+   "biaya": 3.644567,
+   "menang": 5,
+   "pf_bersih": 0.777391,
+   "pnl_bersih": -31.990273,
+   "pnl_kotor": -28.345706,
+   "trade": 11
+  },
+  "DOT": {
+   "biaya": 10.112766,
+   "menang": 13,
+   "pf_bersih": 1.104836,
+   "pnl_bersih": 31.068399,
+   "pnl_kotor": 41.181166,
+   "trade": 26
+  },
+  "EIGEN": {
+   "biaya": 10.470463,
+   "menang": 20,
+   "pf_bersih": 1.479674,
+   "pnl_bersih": 175.996015,
+   "pnl_kotor": 186.466478,
+   "trade": 36
+  },
+  "ENA": {
+   "biaya": 12.607767,
+   "menang": 15,
+   "pf_bersih": 0.706188,
+   "pnl_bersih": -121.32548,
+   "pnl_kotor": -108.717713,
+   "trade": 33
+  },
+  "EPIC": {
+   "biaya": 6.443919,
+   "menang": 8,
+   "pf_bersih": 0.540835,
+   "pnl_bersih": -209.977206,
+   "pnl_kotor": -203.533287,
+   "trade": 28
+  },
+  "ETH": {
+   "biaya": 25.203733,
+   "menang": 22,
+   "pf_bersih": 1.791119,
+   "pnl_bersih": 333.845855,
+   "pnl_kotor": 359.049588,
+   "trade": 39
+  },
+  "ETHFI": {
+   "biaya": 12.9841,
+   "menang": 15,
+   "pf_bersih": 1.115095,
+   "pnl_bersih": 45.63499,
+   "pnl_kotor": 58.619091,
+   "trade": 33
+  },
+  "FARTCOIN": {
+   "biaya": 9.372428,
+   "menang": 14,
+   "pf_bersih": 0.948476,
+   "pnl_bersih": -22.047586,
+   "pnl_kotor": -12.675158,
+   "trade": 34
+  },
+  "FET": {
+   "biaya": 12.026978,
+   "menang": 12,
+   "pf_bersih": 0.450286,
+   "pnl_bersih": -287.225569,
+   "pnl_kotor": -275.198591,
+   "trade": 37
+  },
+  "FIL": {
+   "biaya": 6.142612,
+   "menang": 6,
+   "pf_bersih": 0.618956,
+   "pnl_bersih": -113.711369,
+   "pnl_kotor": -107.568757,
+   "trade": 19
+  },
+  "GIGGLE": {
+   "biaya": 4.951684,
+   "menang": 10,
+   "pf_bersih": 1.017827,
+   "pnl_bersih": 4.521382,
+   "pnl_kotor": 9.473065,
+   "trade": 22
+  },
+  "GRAM": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "GWEI": {
+   "biaya": 0.414759,
+   "menang": 3,
+   "pf_bersih": null,
+   "pnl_bersih": 286.85912,
+   "pnl_kotor": 287.273879,
+   "trade": 3
+  },
+  "H": {
+   "biaya": 5.407608,
+   "menang": 15,
+   "pf_bersih": 1.265013,
+   "pnl_bersih": 119.008583,
+   "pnl_kotor": 124.416191,
+   "trade": 36
+  },
+  "HBAR": {
+   "biaya": 8.871992,
+   "menang": 6,
+   "pf_bersih": 0.347181,
+   "pnl_bersih": -217.969166,
+   "pnl_kotor": -209.097174,
+   "trade": 21
+  },
+  "HEI": {
+   "biaya": 1.55813,
+   "menang": 10,
+   "pf_bersih": 5.801484,
+   "pnl_bersih": 250.193763,
+   "pnl_kotor": 251.751893,
+   "trade": 13
+  },
+  "HMSTR": {
+   "biaya": 8.776333,
+   "menang": 10,
+   "pf_bersih": 0.976251,
+   "pnl_bersih": -6.624109,
+   "pnl_kotor": 2.152224,
+   "trade": 25
+  },
+  "HOT": {
+   "biaya": 1.24571,
+   "menang": 3,
+   "pf_bersih": 1.027592,
+   "pnl_bersih": 2.631472,
+   "pnl_kotor": 3.877182,
+   "trade": 8
+  },
+  "HYPE": {
+   "biaya": 15.658483,
+   "menang": 19,
+   "pf_bersih": 1.140252,
+   "pnl_bersih": 72.228355,
+   "pnl_kotor": 87.886838,
+   "trade": 42
+  },
+  "ICP": {
+   "biaya": 16.642119,
+   "menang": 13,
+   "pf_bersih": 0.855359,
+   "pnl_bersih": -69.415437,
+   "pnl_kotor": -52.773318,
+   "trade": 35
+  },
+  "ID": {
+   "biaya": 8.944211,
+   "menang": 10,
+   "pf_bersih": 1.135131,
+   "pnl_bersih": 31.609764,
+   "pnl_kotor": 40.553975,
+   "trade": 20
+  },
+  "INJ": {
+   "biaya": 10.204078,
+   "menang": 17,
+   "pf_bersih": 1.428661,
+   "pnl_bersih": 118.416539,
+   "pnl_kotor": 128.620618,
+   "trade": 29
+  },
+  "JTO": {
+   "biaya": 3.857451,
+   "menang": 6,
+   "pf_bersih": 1.14432,
+   "pnl_bersih": 23.376598,
+   "pnl_kotor": 27.23405,
+   "trade": 13
+  },
+  "KAITO": {
+   "biaya": 10.894815,
+   "menang": 12,
+   "pf_bersih": 0.776779,
+   "pnl_bersih": -101.349653,
+   "pnl_kotor": -90.454837,
+   "trade": 31
+  },
+  "KORU": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "LAB": {
+   "biaya": 3.290271,
+   "menang": 13,
+   "pf_bersih": 2.047032,
+   "pnl_bersih": 283.819733,
+   "pnl_kotor": 287.110003,
+   "trade": 24
+  },
+  "LINK": {
+   "biaya": 10.366166,
+   "menang": 14,
+   "pf_bersih": 2.187925,
+   "pnl_bersih": 212.750053,
+   "pnl_kotor": 223.116218,
+   "trade": 23
+  },
+  "LIT": {
+   "biaya": 10.73005,
+   "menang": 15,
+   "pf_bersih": 0.869671,
+   "pnl_bersih": -67.319682,
+   "pnl_kotor": -56.589632,
+   "trade": 37
+  },
+  "LTC": {
+   "biaya": 9.359552,
+   "menang": 5,
+   "pf_bersih": 0.754468,
+   "pnl_bersih": -53.616686,
+   "pnl_kotor": -44.257134,
+   "trade": 15
+  },
+  "M": {
+   "biaya": 7.778724,
+   "menang": 9,
+   "pf_bersih": 0.363438,
+   "pnl_bersih": -277.081915,
+   "pnl_kotor": -269.303191,
+   "trade": 30
+  },
+  "MAGMA": {
+   "biaya": 1.616871,
+   "menang": 2,
+   "pf_bersih": 1.589426,
+   "pnl_bersih": 108.989989,
+   "pnl_kotor": 110.60686,
+   "trade": 10
+  },
+  "MIRA": {
+   "biaya": 3.867385,
+   "menang": 10,
+   "pf_bersih": 3.905974,
+   "pnl_bersih": 226.21254,
+   "pnl_kotor": 230.079924,
+   "trade": 14
+  },
+  "MSTR": {
+   "biaya": 13.356896,
+   "menang": 13,
+   "pf_bersih": 1.066196,
+   "pnl_bersih": 26.759045,
+   "pnl_kotor": 40.115941,
+   "trade": 31
+  },
+  "MU": {
+   "biaya": 0.672057,
+   "menang": 1,
+   "pf_bersih": 1.255306,
+   "pnl_bersih": 5.261146,
+   "pnl_kotor": 5.933203,
+   "trade": 2
+  },
+  "NEAR": {
+   "biaya": 14.183823,
+   "menang": 11,
+   "pf_bersih": 0.824349,
+   "pnl_bersih": -65.889053,
+   "pnl_kotor": -51.70523,
+   "trade": 27
+  },
+  "O": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "OGN": {
+   "biaya": 4.837756,
+   "menang": 7,
+   "pf_bersih": 0.587875,
+   "pnl_bersih": -78.049427,
+   "pnl_kotor": -73.211671,
+   "trade": 15
+  },
+  "ONDO": {
+   "biaya": 6.283718,
+   "menang": 6,
+   "pf_bersih": 0.422181,
+   "pnl_bersih": -168.387641,
+   "pnl_kotor": -162.103923,
+   "trade": 19
+  },
+  "PENGU": {
+   "biaya": 9.310145,
+   "menang": 15,
+   "pf_bersih": 1.335496,
+   "pnl_bersih": 119.761959,
+   "pnl_kotor": 129.072105,
+   "trade": 31
+  },
+  "PLAY": {
+   "biaya": 0.848805,
+   "menang": 4,
+   "pf_bersih": 1.329019,
+   "pnl_bersih": 38.105099,
+   "pnl_kotor": 38.953904,
+   "trade": 9
+  },
+  "PUMP": {
+   "biaya": 13.842669,
+   "menang": 15,
+   "pf_bersih": 0.776298,
+   "pnl_bersih": -127.001862,
+   "pnl_kotor": -113.159194,
+   "trade": 40
+  },
+  "RAVE": {
+   "biaya": 0.122784,
+   "menang": 2,
+   "pf_bersih": 3.187827,
+   "pnl_bersih": 52.164086,
+   "pnl_kotor": 52.28687,
+   "trade": 4
+  },
+  "RE": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "RIF": {
+   "biaya": 6.702763,
+   "menang": 15,
+   "pf_bersih": 1.104181,
+   "pnl_bersih": 31.719268,
+   "pnl_kotor": 38.422031,
+   "trade": 29
+  },
+  "RPL": {
+   "biaya": 2.425117,
+   "menang": 4,
+   "pf_bersih": 0.525709,
+   "pnl_bersih": -64.480794,
+   "pnl_kotor": -62.055677,
+   "trade": 10
+  },
+  "SKHYNIX": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "SKYAI": {
+   "biaya": 3.778985,
+   "menang": 11,
+   "pf_bersih": 0.900711,
+   "pnl_bersih": -38.14356,
+   "pnl_kotor": -34.364575,
+   "trade": 28
+  },
+  "SLX": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "SNDK": {
+   "biaya": 8.482373,
+   "menang": 7,
+   "pf_bersih": 0.485252,
+   "pnl_bersih": -123.670732,
+   "pnl_kotor": -115.188359,
+   "trade": 17
+  },
+  "SOL": {
+   "biaya": 13.896716,
+   "menang": 14,
+   "pf_bersih": 1.053562,
+   "pnl_bersih": 19.265803,
+   "pnl_kotor": 33.162519,
+   "trade": 32
+  },
+  "SOXL": {
+   "biaya": 0.039358,
+   "menang": 1,
+   "pf_bersih": null,
+   "pnl_bersih": 4.627501,
+   "pnl_kotor": 4.666859,
+   "trade": 1
+  },
+  "SPCX": {
+   "biaya": 0.0,
+   "menang": 0,
+   "pf_bersih": null,
+   "pnl_bersih": 0.0,
+   "pnl_kotor": 0.0,
+   "trade": 0
+  },
+  "SUI": {
+   "biaya": 17.864055,
+   "menang": 15,
+   "pf_bersih": 0.535312,
+   "pnl_bersih": -259.036823,
+   "pnl_kotor": -241.172767,
+   "trade": 40
+  },
+  "SYN": {
+   "biaya": 5.939359,
+   "menang": 7,
+   "pf_bersih": 0.614956,
+   "pnl_bersih": -91.927079,
+   "pnl_kotor": -85.987721,
+   "trade": 18
+  },
+  "TAO": {
+   "biaya": 11.000169,
+   "menang": 17,
+   "pf_bersih": 1.466748,
+   "pnl_bersih": 168.621423,
+   "pnl_kotor": 179.621591,
+   "trade": 33
+  },
+  "TIA": {
+   "biaya": 13.747613,
+   "menang": 17,
+   "pf_bersih": 1.028873,
+   "pnl_bersih": 13.794867,
+   "pnl_kotor": 27.542481,
+   "trade": 38
+  },
+  "TLM": {
+   "biaya": 10.558191,
+   "menang": 6,
+   "pf_bersih": 0.313,
+   "pnl_bersih": -394.821761,
+   "pnl_kotor": -384.26357,
+   "trade": 36
+  },
+  "TRUMP": {
+   "biaya": 3.729167,
+   "menang": 5,
+   "pf_bersih": 1.160138,
+   "pnl_bersih": 27.430866,
+   "pnl_kotor": 31.160033,
+   "trade": 13
+  },
+  "TRX": {
+   "biaya": 34.578662,
+   "menang": 14,
+   "pf_bersih": 1.164371,
+   "pnl_bersih": 60.554802,
+   "pnl_kotor": 95.133464,
+   "trade": 30
+  },
+  "UNI": {
+   "biaya": 8.478105,
+   "menang": 13,
+   "pf_bersih": 1.362915,
+   "pnl_bersih": 90.40499,
+   "pnl_kotor": 98.883095,
+   "trade": 24
+  },
+  "VANRY": {
+   "biaya": 6.717253,
+   "menang": 6,
+   "pf_bersih": 0.675005,
+   "pnl_bersih": -96.907915,
+   "pnl_kotor": -90.190662,
+   "trade": 19
+  },
+  "VELVET": {
+   "biaya": 2.560251,
+   "menang": 6,
+   "pf_bersih": 12.469732,
+   "pnl_bersih": 1023.800592,
+   "pnl_kotor": 1026.360844,
+   "trade": 10
+  },
+  "VVV": {
+   "biaya": 6.498869,
+   "menang": 13,
+   "pf_bersih": 1.007957,
+   "pnl_bersih": 3.676757,
+   "pnl_kotor": 10.175626,
+   "trade": 35
+  },
+  "WLD": {
+   "biaya": 12.815951,
+   "menang": 11,
+   "pf_bersih": 0.552051,
+   "pnl_bersih": -299.639276,
+   "pnl_kotor": -286.823325,
+   "trade": 42
+  },
+  "WLFI": {
+   "biaya": 2.069942,
+   "menang": 4,
+   "pf_bersih": 1.655584,
+   "pnl_bersih": 62.073022,
+   "pnl_kotor": 64.142964,
+   "trade": 9
+  },
+  "XAG": {
+   "biaya": 26.324834,
+   "menang": 16,
+   "pf_bersih": 0.753211,
+   "pnl_bersih": -133.347668,
+   "pnl_kotor": -107.022834,
+   "trade": 40
+  },
+  "XAU": {
+   "biaya": 44.164959,
+   "menang": 12,
+   "pf_bersih": 0.594319,
+   "pnl_bersih": -213.112424,
+   "pnl_kotor": -168.947465,
+   "trade": 34
+  },
+  "XLM": {
+   "biaya": 18.997509,
+   "menang": 15,
+   "pf_bersih": 0.597263,
+   "pnl_bersih": -201.151937,
+   "pnl_kotor": -182.154427,
+   "trade": 37
+  },
+  "XMR": {
+   "biaya": 10.677581,
+   "menang": 11,
+   "pf_bersih": 1.126195,
+   "pnl_bersih": 37.150697,
+   "pnl_kotor": 47.828279,
+   "trade": 24
+  },
+  "XPL": {
+   "biaya": 11.400021,
+   "menang": 15,
+   "pf_bersih": 0.478839,
+   "pnl_bersih": -327.006831,
+   "pnl_kotor": -315.60681,
+   "trade": 46
+  },
+  "XRP": {
+   "biaya": 18.46506,
+   "menang": 14,
+   "pf_bersih": 0.844512,
+   "pnl_bersih": -60.739298,
+   "pnl_kotor": -42.274238,
+   "trade": 32
+  },
+  "ZEC": {
+   "biaya": 3.231728,
+   "menang": 7,
+   "pf_bersih": 1.663739,
+   "pnl_bersih": 97.955193,
+   "pnl_kotor": 101.186921,
+   "trade": 15
+  },
+  "币安人生": {
+   "biaya": 0.964297,
+   "menang": 8,
+   "pf_bersih": 2.483051,
+   "pnl_bersih": 137.643773,
+   "pnl_kotor": 138.60807,
+   "trade": 13
+  }
+ },
+ "per_strategi": {
+  "breakout_volume": {
+   "biaya": 6.803929,
+   "menang": 18,
+   "pf_bersih": 5.62733,
+   "pnl_bersih": 1192.483655,
+   "pnl_kotor": 1199.287584,
+   "trade": 37
+  },
+  "cup_and_handle": {
+   "biaya": 10.428079,
+   "menang": 23,
+   "pf_bersih": 1.13124,
+   "pnl_bersih": 68.420983,
+   "pnl_kotor": 78.849062,
+   "trade": 49
+  },
+  "double_bottom": {
+   "biaya": 0.28677,
+   "menang": 3,
+   "pf_bersih": null,
+   "pnl_bersih": 24.563672,
+   "pnl_kotor": 24.850441,
+   "trade": 3
+  },
+  "double_top": {
+   "biaya": 0.102194,
+   "menang": 1,
+   "pf_bersih": null,
+   "pnl_bersih": 9.094121,
+   "pnl_kotor": 9.196315,
+   "trade": 1
+  },
+  "ema_bounce_200": {
+   "biaya": 3.716794,
+   "menang": 4,
+   "pf_bersih": 0.965154,
+   "pnl_bersih": -7.171191,
+   "pnl_kotor": -3.454397,
+   "trade": 13
+  },
+  "head_shoulders": {
+   "biaya": 1.23594,
+   "menang": 6,
+   "pf_bersih": 5.620243,
+   "pnl_bersih": 96.041794,
+   "pnl_kotor": 97.277734,
+   "trade": 7
+  },
+  "ict_liquidity_sweep": {
+   "biaya": 15.443883,
+   "menang": 7,
+   "pf_bersih": 0.568978,
+   "pnl_bersih": -210.787927,
+   "pnl_kotor": -195.344044,
+   "trade": 31
+  },
+  "keltner_reversi": {
+   "biaya": 0.100773,
+   "menang": 2,
+   "pf_bersih": null,
+   "pnl_bersih": 8.44416,
+   "pnl_kotor": 8.544933,
+   "trade": 2
+  },
+  "level_bulat": {
+   "biaya": 134.105696,
+   "menang": 105,
+   "pf_bersih": 0.739724,
+   "pnl_bersih": -877.94371,
+   "pnl_kotor": -743.838014,
+   "trade": 252
+  },
+  "pivot_reversal": {
+   "biaya": 218.075861,
+   "menang": 237,
+   "pf_bersih": 1.086477,
+   "pnl_bersih": 546.932698,
+   "pnl_kotor": 765.008559,
+   "trade": 520
+  },
+  "rsi_divergence": {
+   "biaya": 0.641295,
+   "menang": 1,
+   "pf_bersih": 0.53005,
+   "pnl_bersih": -19.124098,
+   "pnl_kotor": -18.482803,
+   "trade": 3
+  },
+  "triangle_breakout": {
+   "biaya": 30.24726,
+   "menang": 39,
+   "pf_bersih": 1.008939,
+   "pnl_bersih": 11.009586,
+   "pnl_kotor": 41.256846,
+   "trade": 102
+  },
+  "vp_tepi_value_area": {
+   "biaya": 82.799147,
+   "menang": 100,
+   "pf_bersih": 1.206489,
+   "pnl_bersih": 460.299689,
+   "pnl_kotor": 543.098836,
+   "trade": 202
+  },
+  "vwap_reclaim": {
+   "biaya": 304.412371,
+   "menang": 352,
+   "pf_bersih": 0.938087,
+   "pnl_bersih": -695.859827,
+   "pnl_kotor": -391.447456,
+   "trade": 855
+  },
+  "vwap_reversi_pita": {
+   "biaya": 3.98961,
+   "menang": 6,
+   "pf_bersih": 0.729905,
+   "pnl_bersih": -38.140871,
+   "pnl_kotor": -34.151261,
+   "trade": 12
+  },
+  "wedge_breakout": {
+   "biaya": 0.656593,
+   "menang": 1,
+   "pf_bersih": 0.387233,
+   "pnl_bersih": -29.253787,
+   "pnl_kotor": -28.597194,
+   "trade": 3
+  }
+ },
+ "registry_id": [
+  "breaker_block",
+  "breakout_volume",
+  "cup_and_handle",
+  "donchian_breakout",
+  "double_bottom",
+  "double_top",
+  "ema_bounce_200",
+  "fib_golden_pocket",
+  "fvg_fill",
+  "head_shoulders",
+  "ict_liquidity_sweep",
+  "keltner_reversi",
+  "level_bulat",
+  "macd_rsi_trendbreak",
+  "market_structure_shift",
+  "order_block_retest",
+  "pivot_reversal",
+  "rsi_divergence",
+  "smc_ob_fvg",
+  "squeeze_breakout",
+  "supertrend_flip",
+  "triangle_breakout",
+  "vp_tepi_value_area",
+  "vwap_reclaim",
+  "vwap_reversi_pita",
+  "wedge_breakout"
+ ],
+ "sidik_trade": "8d8b594e430f6a517f22d0f20122a400",
+ "simbol_diproses": [
+  "1000BONK",
+  "1000PEPE",
+  "1000SHIB",
+  "AAVE",
+  "ADA",
+  "AIGENSYN",
+  "ALLO",
+  "ARPA",
+  "ARX",
+  "ASTER",
+  "AVAX",
+  "BAS",
+  "BCH",
+  "BEAT",
+  "BIRB",
+  "BNB",
+  "BREV",
+  "BTC",
+  "BTW",
+  "CAP",
+  "CL",
+  "CRCL",
+  "DOGE",
+  "DOT",
+  "EIGEN",
+  "ENA",
+  "EPIC",
+  "ETH",
+  "ETHFI",
+  "FARTCOIN",
+  "FET",
+  "FIL",
+  "GIGGLE",
+  "GRAM",
+  "GWEI",
+  "H",
+  "HBAR",
+  "HEI",
+  "HMSTR",
+  "HOT",
+  "HYPE",
+  "ICP",
+  "ID",
+  "INJ",
+  "JTO",
+  "KAITO",
+  "KORU",
+  "LAB",
+  "LINK",
+  "LIT",
+  "LTC",
+  "M",
+  "MAGMA",
+  "MIRA",
+  "MSTR",
+  "MU",
+  "NEAR",
+  "O",
+  "OGN",
+  "ONDO",
+  "PENGU",
+  "PLAY",
+  "PUMP",
+  "RAVE",
+  "RE",
+  "RIF",
+  "RPL",
+  "SKHYNIX",
+  "SKYAI",
+  "SLX",
+  "SNDK",
+  "SOL",
+  "SOXL",
+  "SPCX",
+  "SUI",
+  "SYN",
+  "TAO",
+  "TIA",
+  "TLM",
+  "TRUMP",
+  "TRX",
+  "UNI",
+  "VANRY",
+  "VELVET",
+  "VVV",
+  "WLD",
+  "WLFI",
+  "XAG",
+  "XAU",
+  "XLM",
+  "XMR",
+  "XPL",
+  "XRP",
+  "ZEC",
+  "币安人生"
+ ],
+ "simbol_gagal": {},
+ "simbol_tersedia": 95,
+ "tf": "4h",
+ "total": {
+  "biaya": 813.046195,
+  "menang": 905,
+  "pf_bersih": 1.020634,
+  "pnl_bersih": 539.008946,
+  "pnl_kotor": 1352.055142,
+  "trade": 2092
+ },
+ "varian_modul": {
+  "diterapkan": false,
+  "varian": "asli"
+ }
+}

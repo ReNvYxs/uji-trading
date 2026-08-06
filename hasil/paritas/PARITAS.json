@@ -1,0 +1,123 @@
+{
+ "bar_tersedia": {
+  "a": 89336,
+  "b": 89336
+ },
+ "catatan": [
+  "perbedaan inventaris berkas wajar karena lux-trading menambah lapisan eksekusi_aman; yang diuji di sini adalah paritas perilaku lapis strategi dan backtest"
+ ],
+ "inventaris": {
+  "beda_isi": [],
+  "hanya_di_a": [],
+  "hanya_di_b": [
+   "eksekusi_aman/__init__.py",
+   "eksekusi_aman/inti.py",
+   "eksekusi_aman/proteksi.py"
+  ],
+  "identik": 48
+ },
+ "lengan": {
+  "a": {
+   "akar": "klon_modul",
+   "berkas_py": 48,
+   "detik": 102.7,
+   "galat": [],
+   "label": "a_modul_dasar",
+   "lux_modul_file": "/home/runner/work/uji-trading/uji-trading/klon_modul/lux_modul/__init__.py"
+  },
+  "b": {
+   "akar": "/tmp/klon_lux",
+   "berkas_py": 51,
+   "detik": 102.7,
+   "galat": [],
+   "label": "b_lux_trading",
+   "lux_modul_file": "/tmp/klon_lux/lux_modul/__init__.py"
+  }
+ },
+ "mesin": {
+  "a": {
+   "bar_dievaluasi": 11550,
+   "entry_batal_gap": 0,
+   "entry_ditolak_biaya": 8,
+   "entry_ditolak_sizing": 0,
+   "jumlah_trade": 2092,
+   "kalah": 1187,
+   "menang": 905
+  },
+  "b": {
+   "bar_dievaluasi": 11550,
+   "entry_batal_gap": 0,
+   "entry_ditolak_biaya": 8,
+   "entry_ditolak_sizing": 0,
+   "jumlah_trade": 2092,
+   "kalah": 1187,
+   "menang": 905
+  }
+ },
+ "mesin_beda": {},
+ "modal_awal": {
+  "a": 1000.0,
+  "b": 1000.0
+ },
+ "per_simbol_beda": {},
+ "per_simbol_hanya": {
+  "hanya_di_a": [],
+  "hanya_di_b": []
+ },
+ "per_strategi_beda": {},
+ "per_strategi_hanya": {
+  "hanya_di_a": [],
+  "hanya_di_b": []
+ },
+ "perintah": "paritas",
+ "proses": {
+  "a": {
+   "akar": "klon_modul",
+   "detik": 102.8,
+   "label": "a_modul_dasar",
+   "rc": 0,
+   "stderr_ekor": "",
+   "stdout_ekor": "lengan=a_modul_dasar\nakar=klon_modul\nlux_modul_file=/home/runner/work/uji-trading/uji-trading/klon_modul/lux_modul/__init__.py\nberkas_py=48\nregistry=26\nsimbol_diproses=95\nbar_tersedia=89336\ntrade=2092\npnl_bersih=539.008946\nsidik_trade=8d8b594e430f6a517f22d0f20122a400\ndetik=102.7\n"
+  },
+  "b": {
+   "akar": "/tmp/klon_lux",
+   "detik": 102.8,
+   "label": "b_lux_trading",
+   "rc": 0,
+   "stderr_ekor": "",
+   "stdout_ekor": "lengan=b_lux_trading\nakar=/tmp/klon_lux\nlux_modul_file=/tmp/klon_lux/lux_modul/__init__.py\nberkas_py=51\nregistry=26\nsimbol_diproses=95\nbar_tersedia=89336\ntrade=2092\npnl_bersih=539.008946\nsidik_trade=8d8b594e430f6a517f22d0f20122a400\ndetik=102.7\n"
+  }
+ },
+ "registry_sama": true,
+ "registry_selisih": [],
+ "sidik_cocok": true,
+ "sidik_trade": {
+  "a": "8d8b594e430f6a517f22d0f20122a400",
+  "b": "8d8b594e430f6a517f22d0f20122a400"
+ },
+ "simbol_jumlah": {
+  "a": 95,
+  "b": 95
+ },
+ "simbol_sama": true,
+ "total": {
+  "a": {
+   "biaya": 813.046195,
+   "menang": 905,
+   "pf_bersih": 1.020634,
+   "pnl_bersih": 539.008946,
+   "pnl_kotor": 1352.055142,
+   "trade": 2092
+  },
+  "b": {
+   "biaya": 813.046195,
+   "menang": 905,
+   "pf_bersih": 1.020634,
+   "pnl_bersih": 539.008946,
+   "pnl_kotor": 1352.055142,
+   "trade": 2092
+  }
+ },
+ "total_beda": {},
+ "vonis": "IDENTIK"
+}

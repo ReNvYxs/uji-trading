@@ -1,0 +1,95 @@
+{
+ "vonis": "IDENTIK",
+ "sidik_cocok": true,
+ "sidik_trade": {
+  "a": "8d8b594e430f6a517f22d0f20122a400",
+  "b": "8d8b594e430f6a517f22d0f20122a400"
+ },
+ "registry_sama": true,
+ "registry_selisih": [],
+ "simbol_sama": true,
+ "simbol_jumlah": {
+  "a": 95,
+  "b": 95
+ },
+ "bar_tersedia": {
+  "a": 89336,
+  "b": 89336
+ },
+ "total": {
+  "a": {
+   "biaya": 813.046195,
+   "menang": 905,
+   "pf_bersih": 1.020634,
+   "pnl_bersih": 539.008946,
+   "pnl_kotor": 1352.055142,
+   "trade": 2092
+  },
+  "b": {
+   "biaya": 813.046195,
+   "menang": 905,
+   "pf_bersih": 1.020634,
+   "pnl_bersih": 539.008946,
+   "pnl_kotor": 1352.055142,
+   "trade": 2092
+  }
+ },
+ "total_beda": {},
+ "mesin": {
+  "a": {
+   "bar_dievaluasi": 11550,
+   "entry_batal_gap": 0,
+   "entry_ditolak_biaya": 8,
+   "entry_ditolak_sizing": 0,
+   "jumlah_trade": 2092,
+   "kalah": 1187,
+   "menang": 905
+  },
+  "b": {
+   "bar_dievaluasi": 11550,
+   "entry_batal_gap": 0,
+   "entry_ditolak_biaya": 8,
+   "entry_ditolak_sizing": 0,
+   "jumlah_trade": 2092,
+   "kalah": 1187,
+   "menang": 905
+  }
+ },
+ "mesin_beda": {},
+ "jumlah_simbol_beda": 0,
+ "jumlah_strategi_beda": 0,
+ "inventaris": {
+  "identik": 48,
+  "hanya_di_a": [],
+  "hanya_di_b": [
+   "eksekusi_aman/__init__.py",
+   "eksekusi_aman/inti.py",
+   "eksekusi_aman/proteksi.py"
+  ],
+  "beda_isi": []
+ },
+ "lengan": {
+  "a": {
+   "label": "a_modul_dasar",
+   "akar": "klon_modul",
+   "lux_modul_file": "/home/runner/work/uji-trading/uji-trading/klon_modul/lux_modul/__init__.py",
+   "berkas_py": 48,
+   "detik": 102.7,
+   "galat": []
+  },
+  "b": {
+   "label": "b_lux_trading",
+   "akar": "/tmp/klon_lux",
+   "lux_modul_file": "/tmp/klon_lux/lux_modul/__init__.py",
+   "berkas_py": 51,
+   "detik": 102.7,
+   "galat": []
+  }
+ },
+ "proses_rc": {
+  "a": 0,
+  "b": 0
+ }
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/paritas/PARITAS.json
+rc=0
