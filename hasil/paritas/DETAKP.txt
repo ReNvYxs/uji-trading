@@ -1,0 +1,5 @@
+detak=MULAI
+mulai_utc=2026-08-06T00:47:00Z
+commit=fa43ffef98b8195efac99b8634381e2f50aadf5c
+lengan_a=EnVyxS/lux-modul-trading@8401b2327736a4cc5c588d211eb6911dde0842da
+lengan_b=ReNvYxs/lux-trading@6f38aaa435d8c37717a96c837fa775822fbfa1f5
