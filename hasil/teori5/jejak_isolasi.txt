@@ -1,0 +1,266 @@
+{
+ "detik": 608.4,
+ "galat": 0,
+ "simbol_diproses": 95,
+ "bar_tersedia": 89336,
+ "registry_jumlah": 26,
+ "registry_jalur": "_peta",
+ "selisih_nama": [],
+ "total": {
+  "dasar": {
+   "trade": 2092,
+   "pf": 1.0206,
+   "expR": 0.0117,
+   "pnl": 539.0089,
+   "p1": 426.8364,
+   "p2": 112.1726,
+   "bar_dievaluasi": 11550,
+   "fraksi_terkunci": 0.8707
+  },
+  "tanpa_level_bulat": {
+   "trade": 1952,
+   "pf": 1.0176,
+   "expR": 0.0087,
+   "pnl": 430.1454,
+   "p1": 503.468,
+   "p2": -73.3226,
+   "bar_dievaluasi": 12157,
+   "fraksi_terkunci": 0.8639
+  },
+  "tanpa_vp_tepi_value_area": {
+   "trade": 2237,
+   "pf": 1.0344,
+   "expR": 0.0186,
+   "pnl": 974.374,
+   "p1": 608.7079,
+   "p2": 365.6661,
+   "bar_dievaluasi": 13086,
+   "fraksi_terkunci": 0.8535
+  },
+  "tanpa_dua_terburuk": {
+   "trade": 2046,
+   "pf": 1.0463,
+   "expR": 0.025,
+   "pnl": 1211.8583,
+   "p1": 1241.883,
+   "p2": -30.0247,
+   "bar_dievaluasi": 13714,
+   "fraksi_terkunci": 0.8465
+  },
+  "isolasi_pivot_reversal": {
+   "trade": 2272,
+   "pf": 0.9545,
+   "expR": -0.0255,
+   "pnl": -1337.4139,
+   "p1": -1868.941,
+   "p2": 531.5271,
+   "bar_dievaluasi": 39736,
+   "fraksi_terkunci": 0.5552
+  },
+  "isolasi_level_bulat": {
+   "trade": 790,
+   "pf": 0.9884,
+   "expR": -0.0024,
+   "pnl": -111.4942,
+   "p1": -521.4465,
+   "p2": 409.9522,
+   "bar_dievaluasi": 67332,
+   "fraksi_terkunci": 0.2463
+  },
+  "isolasi_vwap_reclaim": {
+   "trade": 1743,
+   "pf": 0.9672,
+   "expR": -0.0207,
+   "pnl": -755.9971,
+   "p1": -1651.4232,
+   "p2": 895.4261,
+   "bar_dievaluasi": 27844,
+   "fraksi_terkunci": 0.6883
+  },
+  "isolasi_vp_tepi_value_area": {
+   "trade": 843,
+   "pf": 0.9782,
+   "expR": -0.0053,
+   "pnl": -228.4881,
+   "p1": 564.1919,
+   "p2": -792.68,
+   "bar_dievaluasi": 53213,
+   "fraksi_terkunci": 0.4043
+  },
+  "daftar_putih": {
+   "trade": 2139,
+   "pf": 1.0651,
+   "expR": 0.035,
+   "pnl": 1703.4298,
+   "p1": 1936.4336,
+   "p2": -233.0038,
+   "bar_dievaluasi": 23320,
+   "fraksi_terkunci": 0.739
+  }
+ },
+ "delta_vs_dasar": {
+  "tanpa_level_bulat": {
+   "delta": {
+    "trade": -140.0,
+    "pnl_bersih": -108.8635,
+    "pf_bersih": -0.003,
+    "expectancy_r": -0.003,
+    "biaya": -86.2367,
+    "win_rate": -0.0089
+   },
+   "simbol_membaik": 25,
+   "simbol_memburuk": 22
+  },
+  "tanpa_vp_tepi_value_area": {
+   "delta": {
+    "trade": 145.0,
+    "pnl_bersih": 435.3651,
+    "pf_bersih": 0.0138,
+    "expectancy_r": 0.0069,
+    "biaya": 64.4902,
+    "win_rate": -0.0057
+   },
+   "simbol_membaik": 47,
+   "simbol_memburuk": 39
+  },
+  "tanpa_dua_terburuk": {
+   "delta": {
+    "trade": -46.0,
+    "pnl_bersih": 672.8494,
+    "pf_bersih": 0.0257,
+    "expectancy_r": 0.0133,
+    "biaya": -52.4535,
+    "win_rate": -0.0128
+   },
+   "simbol_membaik": 46,
+   "simbol_memburuk": 40
+  },
+  "isolasi_pivot_reversal": {
+   "delta": {
+    "trade": 180.0,
+    "pnl_bersih": -1876.4228,
+    "pf_bersih": -0.0661,
+    "expectancy_r": -0.0372,
+    "biaya": 152.4273,
+    "win_rate": -0.0035
+   },
+   "simbol_membaik": 42,
+   "simbol_memburuk": 47
+  },
+  "isolasi_level_bulat": {
+   "delta": {
+    "trade": -1302.0,
+    "pnl_bersih": -650.5031,
+    "pf_bersih": -0.0322,
+    "expectancy_r": -0.0141,
+    "biaya": -407.3169,
+    "win_rate": 0.0332
+   },
+   "simbol_membaik": 40,
+   "simbol_memburuk": 47
+  },
+  "isolasi_vwap_reclaim": {
+   "delta": {
+    "trade": -349.0,
+    "pnl_bersih": -1295.006,
+    "pf_bersih": -0.0534,
+    "expectancy_r": -0.0324,
+    "biaya": -193.7773,
+    "win_rate": -0.0224
+   },
+   "simbol_membaik": 39,
+   "simbol_memburuk": 48
+  },
+  "isolasi_vp_tepi_value_area": {
+   "delta": {
+    "trade": -1249.0,
+    "pnl_bersih": -767.497,
+    "pf_bersih": -0.0424,
+    "expectancy_r": -0.017,
+    "biaya": -451.9742,
+    "win_rate": 0.0158
+   },
+   "simbol_membaik": 40,
+   "simbol_memburuk": 45
+  },
+  "daftar_putih": {
+   "delta": {
+    "trade": 47.0,
+    "pnl_bersih": 1164.4209,
+    "pf_bersih": 0.0445,
+    "expectancy_r": 0.0233,
+    "biaya": 48.2616,
+    "win_rate": 0.0036
+   },
+   "simbol_membaik": 42,
+   "simbol_memburuk": 42
+  }
+ },
+ "p1_nilai_seleksi": {
+  "pivot_reversal": {
+   "trade_sendirian": 2272,
+   "trade_dalam_kompetisi": 520,
+   "rasio_penekanan": 4.3692,
+   "pf_sendirian": 0.9545,
+   "pf_dalam_kompetisi": 1.0865,
+   "expR_sendirian": -0.0255,
+   "expR_dalam_kompetisi": 0.0413,
+   "pnl_sendirian": -1337.4139,
+   "pnl_dalam_kompetisi": 546.9327,
+   "fraksi_bar_terkunci_posisi_sendirian": 0.5552
+  },
+  "level_bulat": {
+   "trade_sendirian": 790,
+   "trade_dalam_kompetisi": 252,
+   "rasio_penekanan": 3.1349,
+   "pf_sendirian": 0.9884,
+   "pf_dalam_kompetisi": 0.7397,
+   "expR_sendirian": -0.0024,
+   "expR_dalam_kompetisi": -0.1512,
+   "pnl_sendirian": -111.4942,
+   "pnl_dalam_kompetisi": -877.9437,
+   "fraksi_bar_terkunci_posisi_sendirian": 0.2463
+  },
+  "vwap_reclaim": {
+   "trade_sendirian": 1743,
+   "trade_dalam_kompetisi": 855,
+   "rasio_penekanan": 2.0386,
+   "pf_sendirian": 0.9672,
+   "pf_dalam_kompetisi": 0.9381,
+   "expR_sendirian": -0.0207,
+   "expR_dalam_kompetisi": -0.0371,
+   "pnl_sendirian": -755.9971,
+   "pnl_dalam_kompetisi": -695.8598,
+   "fraksi_bar_terkunci_posisi_sendirian": 0.6883
+  },
+  "vp_tepi_value_area": {
+   "trade_sendirian": 843,
+   "trade_dalam_kompetisi": 202,
+   "rasio_penekanan": 4.1733,
+   "pf_sendirian": 0.9782,
+   "pf_dalam_kompetisi": 1.2065,
+   "expR_sendirian": -0.0053,
+   "expR_dalam_kompetisi": 0.0922,
+   "pnl_sendirian": -228.4881,
+   "pnl_dalam_kompetisi": 460.2997,
+   "fraksi_bar_terkunci_posisi_sendirian": 0.4043
+  }
+ },
+ "daftar_putih": {
+  "anggota": [
+   "breakout_volume",
+   "cup_and_handle",
+   "double_bottom",
+   "double_top",
+   "head_shoulders",
+   "keltner_reversi",
+   "pivot_reversal",
+   "triangle_breakout",
+   "vp_tepi_value_area"
+  ],
+  "jumlah": 9,
+  "dasar_pemilihan": "pnl_bersih positif pada varian dasar, lintas 1"
+ }
+}
+keluaran: /home/runner/work/uji-trading/uji-trading/hasil/teori5/TEORI5.json
+rc=0
