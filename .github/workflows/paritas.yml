@@ -1,0 +1,105 @@
+name: paritas
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/paritas.yml'
+      - 'paritas/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: paritas
+  cancel-in-progress: true
+env:
+  MODUL_REPO: EnVyxS/lux-modul-trading
+  MODUL_REF: 8401b2327736a4cc5c588d211eb6911dde0842da
+  DATASET_REPO: EnVyxS/uji-trading
+  ASET_ID: '502033995'
+  ASET_SHA256: 79f906caaf9933d518c319821b77317e57ef15e00a30f849220024b8c6c1bff5
+  GIT_TERMINAL_PROMPT: '0'
+  AB95_PATH: klon_modul/scripts/ab95.py
+  LUX_REPO: ReNvYxs/lux-trading
+  LUX_REF: 6f38aaa435d8c37717a96c837fa775822fbfa1f5
+  PAR_AKAR_B: /tmp/klon_lux
+jobs:
+  paritas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: detak awal
+        run: |
+          mkdir -p hasil/paritas
+          echo "detak=MULAI" > hasil/paritas/DETAKP.txt
+          date -u +"mulai_utc=%Y-%m-%dT%H:%M:%SZ" >> hasil/paritas/DETAKP.txt
+          echo "commit=$GITHUB_SHA" >> hasil/paritas/DETAKP.txt
+          echo "lengan_a=$MODUL_REPO@$MODUL_REF" >> hasil/paritas/DETAKP.txt
+          echo "lengan_b=$LUX_REPO@$LUX_REF" >> hasil/paritas/DETAKP.txt
+          cat hasil/paritas/DETAKP.txt
+      - name: rekam detak
+        if: always()
+        run: bash alat/rekam.sh "paritas detak awal"
+
+      - name: siapkan bahan uji
+        run: |
+          mkdir -p hasil/paritas
+          set +e
+          bash alat/siapkan.sh 2>&1 | tee hasil/paritas/jejak_siapkan.txt
+          RC=${PIPESTATUS[0]}
+          echo "rc_siapkan=$RC" | tee -a hasil/paritas/jejak_siapkan.txt
+          exit $RC
+      - name: rekam siapkan
+        if: always()
+        run: bash alat/rekam.sh "paritas siapkan"
+
+      - name: klon modul bersih ke luar worktree
+        run: |
+          mkdir -p hasil/paritas
+          set -e
+          SKEMA=https
+          HOST=github.com
+          case "$SKEMA$HOST" in *"{"*) echo "tripwire: url rusak"; exit 90;; esac
+          rm -rf "$PAR_AKAR_B"
+          git init -q "$PAR_AKAR_B"
+          cd "$PAR_AKAR_B"
+          git remote add origin "$SKEMA://$HOST/$LUX_REPO.git"
+          git fetch -q --depth 1 origin "$LUX_REF"
+          git checkout -q FETCH_HEAD
+          cd "$GITHUB_WORKSPACE"
+          test -f "$PAR_AKAR_B/scripts/ab95.py" || exit 5
+          test -d "$PAR_AKAR_B/lux_modul" || exit 6
+          echo "lengan_b_ok=1" | tee hasil/paritas/jejak_klon_b.txt
+          find "$PAR_AKAR_B/lux_modul" -name "*.py" | wc -l | tee -a hasil/paritas/jejak_klon_b.txt
+      - name: rekam klon
+        if: always()
+        run: bash alat/rekam.sh "paritas klon lengan b"
+
+      - name: dependensi modul
+        run: |
+          mkdir -p hasil/paritas
+          python -m pip install --quiet --upgrade pip
+          python -m pip install --quiet -r klon_modul/requirements.txt
+          python -c "import numpy,pandas,pyarrow,yaml;print('dep OK')" | tee hasil/paritas/jejak_dependensi.txt
+      - name: rekam dependensi
+        if: always()
+        run: bash alat/rekam.sh "paritas dependensi"
+
+      - name: banding dua lengan
+        continue-on-error: true
+        env:
+          LUX_MAKS_BAR_4H: '1200'
+          LUX_BATAS_DETIK: '2400'
+          PAR_BATAS_PROSES: '3000'
+        run: |
+          mkdir -p hasil/paritas
+          set +e
+          python3 paritas/banding.py 2>&1 | tee hasil/paritas/jejak_paritas.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/paritas/jejak_paritas.txt
+      - name: rekam paritas
+        if: always()
+        run: bash alat/rekam.sh "paritas banding"
