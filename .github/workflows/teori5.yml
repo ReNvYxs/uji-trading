@@ -1,0 +1,80 @@
+name: teori5
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/teori5.yml'
+      - 'teori5/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: teori5
+  cancel-in-progress: true
+env:
+  MODUL_REPO: EnVyxS/lux-modul-trading
+  MODUL_REF: 8401b2327736a4cc5c588d211eb6911dde0842da
+  DATASET_REPO: EnVyxS/uji-trading
+  ASET_ID: '502033995'
+  ASET_SHA256: 79f906caaf9933d518c319821b77317e57ef15e00a30f849220024b8c6c1bff5
+  GIT_TERMINAL_PROMPT: '0'
+  AB95_PATH: klon_modul/scripts/ab95.py
+jobs:
+  teori5:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: detak awal
+        run: |
+          mkdir -p hasil/teori5
+          echo "detak=MULAI" > hasil/teori5/DETAK5.txt
+          date -u +"mulai_utc=%Y-%m-%dT%H:%M:%SZ" >> hasil/teori5/DETAK5.txt
+          echo "commit=$GITHUB_SHA" >> hasil/teori5/DETAK5.txt
+          echo "runner=$(uname -s) cpu=$(nproc)" >> hasil/teori5/DETAK5.txt
+          cat hasil/teori5/DETAK5.txt
+      - name: rekam detak
+        if: always()
+        run: bash alat/rekam.sh "teori5 detak awal"
+
+      - name: siapkan bahan uji
+        run: |
+          mkdir -p hasil/teori5
+          set +e
+          bash alat/siapkan.sh 2>&1 | tee hasil/teori5/jejak_siapkan.txt
+          RC=${PIPESTATUS[0]}
+          echo "rc_siapkan=$RC" | tee -a hasil/teori5/jejak_siapkan.txt
+          exit $RC
+      - name: rekam siapkan
+        if: always()
+        run: bash alat/rekam.sh "teori5 siapkan"
+
+      - name: dependensi modul
+        run: |
+          mkdir -p hasil/teori5
+          python -m pip install --quiet --upgrade pip
+          python -m pip install --quiet -r klon_modul/requirements.txt
+          python -c "import numpy,pandas,pyarrow,yaml;print('dep OK')" | tee hasil/teori5/jejak_dependensi.txt
+      - name: rekam dependensi
+        if: always()
+        run: bash alat/rekam.sh "teori5 dependensi"
+
+      - name: isolasi dan leave one out
+        continue-on-error: true
+        env:
+          LUX_BATAS_DETIK: '4200'
+          LUX_BATAS_RUN: '2600'
+          LUX_MAKS_BAR_4H: '1200'
+          LUX_MIN_SAMPEL: '200'
+        run: |
+          mkdir -p hasil/teori5
+          set +e
+          python3 teori5/isolasi.py 2>&1 | tee hasil/teori5/jejak_isolasi.txt
+          echo "rc=${PIPESTATUS[0]}" | tee -a hasil/teori5/jejak_isolasi.txt
+      - name: rekam isolasi
+        if: always()
+        run: bash alat/rekam.sh "teori5 isolasi dan loo"
