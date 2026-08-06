@@ -9,9 +9,11 @@ jadi belum boleh disimpulkan. Probe ini membuat perbandingannya terkontrol.
 
 Pertanyaan yang dijawab dengan bukti.
 
-P1. Apakah arbiter/okupansi posisi yang memilih sinyal terbaik itu menambah
-    nilai? Bandingkan tiap strategi saat SENDIRIAN lawan saat bersaing di
-    registry penuh, pada simbol, bar, dan konstruksi Backtester yang identik.
+P1. Apakah arbiter dan okupansi posisi yang memilih sinyal terbaik itu
+    menambah nilai? Bandingkan tiap strategi saat SENDIRIAN lawan saat
+    bersaing di registry penuh, pada simbol, bar, dan konstruksi Backtester
+    yang identik. bar_dievaluasi dan bar_tersedia direkam supaya mekanisme
+    penekanan jumlah trade terbukti, bukan sekadar disimpulkan.
 
 P2. Apakah membuang strategi yang selalu rugi benar-benar memperbaiki hasil?
     level_bulat negatif di enam konfigurasi TF, vp_tepi_value_area negatif di
@@ -44,6 +46,13 @@ BATAS = float(os.environ.get("LUX_BATAS_DETIK", "2700"))
 MAKS_BAR = int(os.environ.get("LUX_MAKS_BAR_4H", "1200"))
 MIN_SAMPEL = int(os.environ.get("LUX_MIN_SAMPEL", "200"))
 BATAS_RUN = float(os.environ.get("LUX_BATAS_RUN", "1500"))
+
+KUNCI_MESIN = [
+    "bar_dievaluasi",
+    "entry_ditolak_biaya",
+    "entry_ditolak_sizing",
+    "entry_batal_gap",
+]
 
 t0 = time.time()
 out = {"perintah": "teori5", "catatan": [], "galat": []}
@@ -286,11 +295,17 @@ def lintas(varian_list, simbol_list, tfplan, tfs, batas_lokal):
     mulai = time.time()
     baris = {}
     per_simbol = {}
+    mesin = {}
     for nama, _ in varian_list:
         baris[nama] = []
         per_simbol[nama] = {}
+        m0 = {}
+        for k in KUNCI_MESIN:
+            m0[k] = 0
+        mesin[nama] = m0
     gagal = {}
     diproses = []
+    bar_tersedia = 0
     for simbol in simbol_list:
         if sisa() < 200 or (time.time() - mulai) > batas_lokal:
             break
@@ -299,7 +314,12 @@ def lintas(varian_list, simbol_list, tfplan, tfs, batas_lokal):
         except Exception as e:
             gagal[simbol] = ("muat: " + str(e))[:180]
             continue
+        try:
+            n_bar = int(len(plane.bars(tfplan.entry_tf)))
+        except Exception:
+            n_bar = 0
         lokal = {}
+        lokal_mesin = {}
         ok = True
         for nama, pembuat in varian_list:
             try:
@@ -316,6 +336,11 @@ def lintas(varian_list, simbol_list, tfplan, tfs, batas_lokal):
                 gagal[simbol + " / " + nama] = str(e)[:180]
                 ok = False
                 break
+            try:
+                r = hasil.ringkas() or {}
+            except Exception:
+                r = {}
+            lokal_mesin[nama] = r
             rows = []
             for t in hasil.trades:
                 rows.append(
@@ -335,15 +360,28 @@ def lintas(varian_list, simbol_list, tfplan, tfs, batas_lokal):
         if not ok:
             continue
         diproses.append(simbol)
+        bar_tersedia += n_bar
         for nama in lokal:
             baris[nama].extend(lokal[nama])
             per_simbol[nama][simbol] = metrik(lokal[nama])
+            r = lokal_mesin.get(nama) or {}
+            for k in KUNCI_MESIN:
+                v = r.get(k)
+                if isinstance(v, (int, float)):
+                    mesin[nama][k] += int(v)
+    for nama in mesin:
+        be = mesin[nama].get("bar_dievaluasi") or 0
+        mesin[nama]["bar_tersedia"] = bar_tersedia
+        if bar_tersedia > 0:
+            mesin[nama]["fraksi_bar_dievaluasi"] = bulat(be / bar_tersedia, 4)
+            mesin[nama]["fraksi_bar_terkunci_posisi"] = bulat(1.0 - be / bar_tersedia, 4)
     meta = {
         "simbol_diproses": len(diproses),
         "simbol_gagal": gagal,
+        "bar_tersedia": bar_tersedia,
         "detik": round(time.time() - mulai, 1),
     }
-    return baris, per_simbol, diproses, meta
+    return baris, per_simbol, diproses, meta, mesin
 
 
 def dua_paruh(rows, batas_ts):
@@ -439,7 +477,7 @@ for sid in ISOLASI:
 
 out["varian_lintas1"] = [v[0] for v in VARIAN]
 
-BARIS, PS, DIPROSES, META = lintas(VARIAN, SIMBOL, TFPLAN, TFS, BATAS_RUN)
+BARIS, PS, DIPROSES, META, MESIN = lintas(VARIAN, SIMBOL, TFPLAN, TFS, BATAS_RUN)
 out["lintas1"] = META
 simpan()
 
@@ -456,6 +494,7 @@ for nama, _ in VARIAN:
     a1, a2 = dua_paruh(rows, BATAS_TS)
     b["paruh_1_pnl"] = a1.get("pnl_bersih")
     b["paruh_2_pnl"] = a2.get("pnl_bersih")
+    b["mesin"] = MESIN.get(nama)
     b["per_strategi"] = bagi_strategi(rows, BATAS_TS)
     blok[nama] = b
 
@@ -481,6 +520,7 @@ for sid in ISOLASI:
     kom = DASAR_PER.get(sid) or {"trade": 0}
     ti = iso.get("trade") or 0
     tk = kom.get("trade") or 0
+    mes = blok[kunci].get("mesin") or {}
     seleksi[sid] = {
         "trade_sendirian": ti,
         "trade_dalam_kompetisi": tk,
@@ -491,6 +531,7 @@ for sid in ISOLASI:
         "expR_dalam_kompetisi": kom.get("expectancy_r"),
         "pnl_sendirian": iso.get("pnl_bersih"),
         "pnl_dalam_kompetisi": kom.get("pnl_bersih"),
+        "fraksi_bar_terkunci_posisi_sendirian": mes.get("fraksi_bar_terkunci_posisi"),
     }
 out["p1_nilai_seleksi"] = seleksi
 simpan()
@@ -509,12 +550,15 @@ out["daftar_putih"] = {
 
 if PUTIH and len(PUTIH) < len(NAMA) and sisa() > 300:
     V2 = [("daftar_putih", buat_pembuat(PUTIH))]
-    B2, PS2, DIP2, META2 = lintas(V2, DIPROSES, TFPLAN, TFS, min(BATAS_RUN, sisa() - 200))
+    B2, PS2, DIP2, META2, MESIN2 = lintas(
+        V2, DIPROSES, TFPLAN, TFS, min(BATAS_RUN, sisa() - 200)
+    )
     rows2 = B2["daftar_putih"]
     b2 = {"total": metrik(rows2)}
     c1, c2 = dua_paruh(rows2, BATAS_TS)
     b2["paruh_1_pnl"] = c1.get("pnl_bersih")
     b2["paruh_2_pnl"] = c2.get("pnl_bersih")
+    b2["mesin"] = MESIN2.get("daftar_putih")
     b2["per_strategi"] = bagi_strategi(rows2, BATAS_TS)
     b2["delta_vs_dasar"] = delta(DASAR_TOTAL, b2["total"])
     b2["berpasangan_vs_dasar"] = banding_simbol(PS["dasar"], PS2["daftar_putih"])
@@ -522,7 +566,9 @@ if PUTIH and len(PUTIH) < len(NAMA) and sisa() > 300:
     b2["simbol_sama_dengan_lintas1"] = bool(len(DIP2) == len(DIPROSES))
     out["p3_daftar_putih"] = b2
 else:
-    out["catatan"].append("daftar putih dilewati: kosong, sama dengan penuh, atau waktu habis")
+    out["catatan"].append(
+        "daftar putih dilewati: kosong, sama dengan penuh, atau waktu habis"
+    )
 
 out["detik"] = round(time.time() - t0, 1)
 simpan()
@@ -532,6 +578,7 @@ ringkas = {
     "detik": out.get("detik"),
     "galat": len(out.get("galat") or []),
     "simbol_diproses": META.get("simbol_diproses"),
+    "bar_tersedia": META.get("bar_tersedia"),
     "registry_jumlah": len(NAMA),
     "registry_jalur": JALUR,
     "selisih_nama": out["registry"]["selisih_vs_daftar_diketahui"],
@@ -542,6 +589,7 @@ ringkas = {
 }
 for nama in blok:
     tt = blok[nama]["total"]
+    mm = blok[nama].get("mesin") or {}
     ringkas["total"][nama] = {
         "trade": tt.get("trade"),
         "pf": tt.get("pf_bersih"),
@@ -549,6 +597,8 @@ for nama in blok:
         "pnl": tt.get("pnl_bersih"),
         "p1": blok[nama].get("paruh_1_pnl"),
         "p2": blok[nama].get("paruh_2_pnl"),
+        "bar_dievaluasi": mm.get("bar_dievaluasi"),
+        "fraksi_terkunci": mm.get("fraksi_bar_terkunci_posisi"),
     }
     if nama != "dasar":
         bp = blok[nama].get("berpasangan_vs_dasar") or {}
@@ -560,6 +610,7 @@ for nama in blok:
 p3 = out.get("p3_daftar_putih")
 if p3:
     tt = p3["total"]
+    mm = p3.get("mesin") or {}
     ringkas["total"]["daftar_putih"] = {
         "trade": tt.get("trade"),
         "pf": tt.get("pf_bersih"),
@@ -567,6 +618,8 @@ if p3:
         "pnl": tt.get("pnl_bersih"),
         "p1": p3.get("paruh_1_pnl"),
         "p2": p3.get("paruh_2_pnl"),
+        "bar_dievaluasi": mm.get("bar_dievaluasi"),
+        "fraksi_terkunci": mm.get("fraksi_bar_terkunci_posisi"),
     }
     bp = p3.get("berpasangan_vs_dasar") or {}
     ringkas["delta_vs_dasar"]["daftar_putih"] = {
